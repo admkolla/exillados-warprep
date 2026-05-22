@@ -1,0 +1,200 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="ExilladosWarPrep.MainWindow"
+        Title="Exillados WarPrep"
+        Width="1180"
+        Height="760"
+        MinWidth="1040"
+        MinHeight="680"
+        Background="#0B0F14">
+
+  <Grid RowDefinitions="Auto,*" ColumnDefinitions="310,*">
+
+    <Border Grid.Row="0" Grid.ColumnSpan="2" Background="#101722" Padding="22,16">
+      <Grid ColumnDefinitions="*,Auto">
+        <StackPanel>
+          <TextBlock Text="EXILLADOS WARPREP"
+                     Foreground="#F9FAFB"
+                     FontSize="28"
+                     FontWeight="Bold"/>
+          <TextBlock Text="Preparação segura, gratuita e open-source para Node War"
+                     Foreground="#9CA3AF"
+                     FontSize="14"/>
+        </StackPanel>
+
+        <Border Grid.Column="1"
+                Background="#2A1111"
+                BorderBrush="#EF4444"
+                BorderThickness="1"
+                CornerRadius="14"
+                Padding="14,8"
+                VerticalAlignment="Center">
+          <TextBlock Text="v0.2 • Rede e diagnóstico"
+                     Foreground="#FCA5A5"
+                     FontWeight="Bold"/>
+        </Border>
+      </Grid>
+    </Border>
+
+    <Border Grid.Row="1" Grid.Column="0" Background="#0F172A" Padding="18">
+      <ScrollViewer>
+        <StackPanel Spacing="14">
+
+          <Border Background="#111827" CornerRadius="16" Padding="16">
+            <StackPanel Spacing="6">
+              <TextBlock Text="🛡️ Exillados"
+                         Foreground="#F9FAFB"
+                         FontSize="22"
+                         FontWeight="Bold"/>
+              <TextBlock Text="Este programa não mexe no BDO, não é cheat, não coleta dados pessoais e tudo que alterar deverá ser reversível."
+                         Foreground="#CBD5E1"
+                         TextWrapping="Wrap"/>
+            </StackPanel>
+          </Border>
+
+          <Border Background="#172033" CornerRadius="16" Padding="14">
+            <StackPanel Spacing="8">
+              <TextBlock Text="Tipo de exame de rede"
+                         Foreground="#F9FAFB"
+                         FontWeight="Bold"/>
+              <ComboBox x:Name="ModoTesteCombo"
+                        SelectedIndex="0"
+                        HorizontalAlignment="Stretch">
+                <ComboBoxItem Content="Curto — rápido antes da Node"/>
+                <ComboBoxItem Content="Médio — recomendado"/>
+                <ComboBoxItem Content="Longo — diagnóstico detalhado"/>
+              </ComboBox>
+              <TextBlock Text="Curto: rápido. Médio: mais confiável. Longo: melhor para investigar instabilidade."
+                         Foreground="#94A3B8"
+                         TextWrapping="Wrap"
+                         FontSize="12"/>
+            </StackPanel>
+          </Border>
+
+          <Button Content="🔎 Diagnosticar PC e Rede"
+                  Click="OnDiagnosticarClick"
+                  Height="46"
+                  FontSize="15"/>
+
+          <Button Content="⚔️ Preparar para Guerra"
+                  Click="OnPrepararClick"
+                  Height="46"
+                  FontSize="15"/>
+
+          <Button Content="↩ Restaurar Configurações"
+                  Click="OnRestaurarClick"
+                  Height="46"
+                  FontSize="15"/>
+
+          <Button Content="📋 Copiar Relatório"
+                  Click="OnCopiarRelatorioClick"
+                  Height="46"
+                  FontSize="15"/>
+
+          <Border Background="#172033" CornerRadius="14" Padding="14" Margin="0,10,0,0">
+            <StackPanel Spacing="7">
+              <TextBlock Text="Princípios do projeto"
+                         Foreground="#F9FAFB"
+                         FontWeight="Bold"/>
+              <TextBlock Text="✅ Gratuito"
+                         Foreground="#CBD5E1"/>
+              <TextBlock Text="✅ Open-source"
+                         Foreground="#CBD5E1"/>
+              <TextBlock Text="✅ Seguro"
+                         Foreground="#CBD5E1"/>
+              <TextBlock Text="✅ Reversível"
+                         Foreground="#CBD5E1"/>
+              <TextBlock Text="✅ Sem falcatrua"
+                         Foreground="#CBD5E1"/>
+            </StackPanel>
+          </Border>
+
+        </StackPanel>
+      </ScrollViewer>
+    </Border>
+
+    <ScrollViewer Grid.Row="1" Grid.Column="1">
+      <StackPanel Margin="24" Spacing="18">
+
+        <Border Background="#111827" CornerRadius="18" Padding="22">
+          <StackPanel Spacing="8">
+            <TextBlock x:Name="StatusTitle"
+                       Text="Quartel de preparação"
+                       Foreground="#F9FAFB"
+                       FontSize="24"
+                       FontWeight="Bold"/>
+            <TextBlock x:Name="ResumoText"
+                       Text="Escolha o tipo de exame e clique em Diagnosticar."
+                       Foreground="#CBD5E1"
+                       FontSize="15"
+                       TextWrapping="Wrap"/>
+          </StackPanel>
+        </Border>
+
+        <Grid ColumnDefinitions="*,*" ColumnSpacing="18">
+          <Border Background="#111827" CornerRadius="18" Padding="20">
+            <StackPanel Spacing="8">
+              <TextBlock Text="Sistema"
+                         Foreground="#F9FAFB"
+                         FontSize="18"
+                         FontWeight="Bold"/>
+              <TextBlock x:Name="SistemaText"
+                         Text="Aguardando diagnóstico..."
+                         Foreground="#CBD5E1"
+                         TextWrapping="Wrap"/>
+            </StackPanel>
+          </Border>
+
+          <Border Grid.Column="1" Background="#111827" CornerRadius="18" Padding="20">
+            <StackPanel Spacing="8">
+              <TextBlock Text="Rede"
+                         Foreground="#F9FAFB"
+                         FontSize="18"
+                         FontWeight="Bold"/>
+              <TextBlock x:Name="RedeText"
+                         Text="Aguardando teste de ping/tracert..."
+                         Foreground="#CBD5E1"
+                         TextWrapping="Wrap"/>
+            </StackPanel>
+          </Border>
+        </Grid>
+
+        <Border Background="#111827" CornerRadius="18" Padding="20">
+          <StackPanel Spacing="10">
+            <TextBlock Text="Tracert"
+                       Foreground="#F9FAFB"
+                       FontSize="18"
+                       FontWeight="Bold"/>
+            <TextBox x:Name="TracertBox"
+                     Text="Aguardando execução do tracert..."
+                     AcceptsReturn="True"
+                     IsReadOnly="True"
+                     TextWrapping="Wrap"
+                     MinHeight="170"
+                     Background="#0B1220"
+                     Foreground="#E5E7EB"/>
+          </StackPanel>
+        </Border>
+
+        <Border Background="#111827" CornerRadius="18" Padding="20">
+          <StackPanel Spacing="10">
+            <TextBlock Text="Relatório para Discord"
+                       Foreground="#F9FAFB"
+                       FontSize="18"
+                       FontWeight="Bold"/>
+            <TextBox x:Name="RelatorioBox"
+                     Text="Exillados WarPrep v0.2 pronto. Nenhum diagnóstico executado ainda."
+                     AcceptsReturn="True"
+                     IsReadOnly="True"
+                     TextWrapping="Wrap"
+                     MinHeight="300"
+                     Background="#0B1220"
+                     Foreground="#E5E7EB"/>
+          </StackPanel>
+        </Border>
+
+      </StackPanel>
+    </ScrollViewer>
+
+  </Grid>
+</Window>
