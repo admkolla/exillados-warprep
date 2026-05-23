@@ -2,7 +2,7 @@
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 
-namespace ExilladosWarPrep;
+namespace PerformanceCenter;
 
 public partial class App : Application
 {
@@ -21,6 +21,8 @@ public partial class App : Application
         base.OnFrameworkInitializationCompleted();
     }
 }
+
+
 
 
 

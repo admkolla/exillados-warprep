@@ -12,3 +12,7 @@ src/ExilladosWarPrep/bin/
 src/ExilladosWarPrep/obj/
 
 backup-v*/
+
+src/PerformanceCenter/bin/
+src/PerformanceCenter/obj/
+PerformanceCenter-v*/

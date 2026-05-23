@@ -12,11 +12,11 @@ using System.Runtime.Versioning;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExilladosWarPrep;
+namespace PerformanceCenter;
 
 public partial class MainWindow : Window
 {
-    private string _ultimoRelatorio = "Exillados WarPrep v3.0 pronto. Nenhum diagnóstico executado ainda.";
+    private string _ultimoRelatorio = "Exillados WarPrep v3.2 pronto. Nenhum diagnóstico executado ainda.";
     private bool _repararWindowsConfirmacaoPendente = false;
     private bool _limpezaConfirmacaoPendente = false;
     private bool _fecharSelecionadosConfirmacaoPendente = false;
@@ -43,7 +43,7 @@ public partial class MainWindow : Window
         if (!OperatingSystem.IsWindows())
         {
             _ultimoRelatorio =
-                "===== EXILLADOS WARPREP v3.0 =====\n\n" +
+                "===== EXILLADOS WARPREP v3.2 =====\n\n" +
                 "TRIAGEM DE PROCESSOS SUSPEITOS:\n\n" +
                 "Esta função só está disponível no Windows.\n" +
                 "Nenhuma alteração foi aplicada.\n";
@@ -170,7 +170,7 @@ else {
 
         var sb = new StringBuilder();
 
-        sb.AppendLine("===== EXILLADOS WARPREP v3.0 =====");
+        sb.AppendLine("===== EXILLADOS WARPREP v3.2 =====");
         sb.AppendLine();
         sb.AppendLine("🕵️ TRIAGEM DE PROCESSOS SUSPEITOS");
         sb.AppendLine();
@@ -260,7 +260,7 @@ else {
 
         var sb = new StringBuilder();
 
-        sb.AppendLine("===== EXILLADOS WARPREP v3.0 =====");
+        sb.AppendLine("===== EXILLADOS WARPREP v3.2 =====");
         sb.AppendLine();
         sb.AppendLine("🖥️ DIAGNÓSTICO GAMER DO PC");
         sb.AppendLine();
@@ -457,7 +457,7 @@ else {
         AtualizarMedidor(pingCloudflare.MediaMs is null ? null : (long)Math.Round(pingCloudflare.MediaMs.Value), "Exame concluído");
 
         _ultimoRelatorio =
-            "===== EXILLADOS WARPREP v3.0 =====\n" +
+            "===== EXILLADOS WARPREP v3.2 =====\n" +
             $"Data: {DateTime.Now:dd/MM/yyyy HH:mm:ss}\n\n" +
             "OBJETIVO:\n" +
             "Ferramenta gratuita e open-source para ajudar players a prepararem o PC antes da Node War.\n" +
@@ -1022,6 +1022,8 @@ else {
         }
     }
 }
+
+
 
 
 

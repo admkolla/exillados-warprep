@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ExilladosWarPrep;
+namespace PerformanceCenter;
 
 public partial class MainWindow
 {
@@ -197,6 +197,8 @@ public partial class MainWindow
         return MotivoPodeFechar(p.Nome);
     }
 }
+
+
 
 
 

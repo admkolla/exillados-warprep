@@ -1,7 +1,7 @@
 ﻿using Avalonia;
 using System;
 
-namespace ExilladosWarPrep;
+namespace PerformanceCenter;
 
 class Program
 {
@@ -22,6 +22,8 @@ class Program
             .WithInterFont()
             .LogToTrace();
 }
+
+
 
 
 

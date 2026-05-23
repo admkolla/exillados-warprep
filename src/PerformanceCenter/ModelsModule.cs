@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ExilladosWarPrep;
+namespace PerformanceCenter;
 
 public partial class MainWindow
 {
@@ -14,6 +14,8 @@ public partial class MainWindow
 
     private sealed record CloseAppsResult(int PedidosEnviados, int Ignorados, List<string> Detalhes);
 }
+
+
 
 
 

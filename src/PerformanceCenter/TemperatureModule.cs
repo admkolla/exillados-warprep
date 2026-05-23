@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ExilladosWarPrep;
+namespace PerformanceCenter;
 
 public partial class MainWindow
 {
@@ -90,7 +90,7 @@ public partial class MainWindow
     {
         var sb = new StringBuilder();
 
-        sb.AppendLine("===== EXILLADOS WARPREP v3.0 =====");
+        sb.AppendLine("===== EXILLADOS WARPREP v3.2 =====");
         sb.AppendLine();
         sb.AppendLine("🌡️ TEMPERATURAS E SENSORES GAMER");
         sb.AppendLine();
@@ -280,6 +280,8 @@ public partial class MainWindow
         string Unidade
     );
 }
+
+
 
 
 

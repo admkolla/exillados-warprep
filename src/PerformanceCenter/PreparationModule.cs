@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExilladosWarPrep;
+namespace PerformanceCenter;
 
 public partial class MainWindow
 {
@@ -24,7 +24,7 @@ public partial class MainWindow
         SistemaText.Text = relatorioPreparacao;
 
         RelatorioBox.Text =
-            "===== EXILLADOS WARPREP v3.0 =====\n\n" +
+            "===== EXILLADOS WARPREP v3.2 =====\n\n" +
             "PREPARAÇÃO PARA GUERRA:\n" +
             relatorioPreparacao + "\n\n" +
             "OBSERVAÇÃO:\n" +
@@ -126,7 +126,7 @@ public partial class MainWindow
 
         var sb = new StringBuilder();
 
-        sb.AppendLine("🛡️ CHECKLIST DE GUERRA — EXILLADOS v3.0");
+        sb.AppendLine("🛡️ CHECKLIST DE GUERRA — EXILLADOS v3.2");
         sb.AppendLine();
 
         sb.AppendLine("🧭 SCORE DE PRONTIDÃO:");
@@ -269,7 +269,7 @@ public partial class MainWindow
 
         var sb = new StringBuilder();
 
-        sb.AppendLine("===== EXILLADOS WARPREP v3.0 =====");
+        sb.AppendLine("===== EXILLADOS WARPREP v3.2 =====");
         sb.AppendLine();
         sb.AppendLine("LISTA DE APPS SEGUROS PARA MARCAR:");
         sb.AppendLine();
@@ -336,7 +336,7 @@ public partial class MainWindow
             ResumoText.Text = "Marque pelo menos um app seguro antes de pedir fechamento.";
 
             _ultimoRelatorio =
-                "===== EXILLADOS WARPREP v3.0 =====\n\n" +
+                "===== EXILLADOS WARPREP v3.2 =====\n\n" +
                 "Nenhum app foi marcado para fechamento.\n\n" +
                 "Use primeiro:\n" +
                 "1. 📋 Listar Apps Seguros\n" +
@@ -357,7 +357,7 @@ public partial class MainWindow
 
             var sb = new StringBuilder();
 
-            sb.AppendLine("===== EXILLADOS WARPREP v3.0 =====");
+            sb.AppendLine("===== EXILLADOS WARPREP v3.2 =====");
             sb.AppendLine();
             sb.AppendLine("CONFIRMAÇÃO DE FECHAMENTO DOS APPS MARCADOS:");
             sb.AppendLine();
@@ -393,7 +393,7 @@ public partial class MainWindow
 
         var rel = new StringBuilder();
 
-        rel.AppendLine("===== EXILLADOS WARPREP v3.0 =====");
+        rel.AppendLine("===== EXILLADOS WARPREP v3.2 =====");
         rel.AppendLine();
         rel.AppendLine("RESULTADO DO FECHAMENTO DOS APPS MARCADOS:");
         rel.AppendLine();
@@ -550,7 +550,7 @@ public partial class MainWindow
             ResumoText.Text = "Clique novamente em Limpar Temporários Seguros para confirmar. Apenas arquivos temporários antigos do usuário serão removidos.";
 
             _ultimoRelatorio =
-                "===== EXILLADOS WARPREP v3.0 =====\n\n" +
+                "===== EXILLADOS WARPREP v3.2 =====\n\n" +
                 "CONFIRMAÇÃO DE LIMPEZA SEGURA:\n\n" +
                 $"Pasta temporária analisada: {preview.PastaTemp}\n" +
                 $"Arquivos analisados: {preview.ArquivosAnalisados}\n" +
@@ -578,7 +578,7 @@ public partial class MainWindow
         ResumoText.Text = "Arquivos temporários antigos foram limpos. Arquivos bloqueados/em uso foram ignorados.";
 
         _ultimoRelatorio =
-            "===== EXILLADOS WARPREP v3.0 =====\n\n" +
+            "===== EXILLADOS WARPREP v3.2 =====\n\n" +
             "RESULTADO DA LIMPEZA SEGURA:\n\n" +
             $"Pasta temporária: {resultado.PastaTemp}\n" +
             $"Arquivos encontrados/analisados: {resultado.ArquivosAnalisados}\n" +
@@ -645,6 +645,8 @@ public partial class MainWindow
         return new CleanupResult(pastaTemp, analisados, removidos, falhas, bytesLiberados);
     }
 }
+
+
 
 
 

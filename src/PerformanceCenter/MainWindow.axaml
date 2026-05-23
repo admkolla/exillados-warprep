@@ -1,6 +1,6 @@
 ﻿<Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        x:Class="ExilladosWarPrep.MainWindow"
+        x:Class="PerformanceCenter.MainWindow"
         Title="Exillados WarPrep"
         Width="1260"
         Height="840"
@@ -29,7 +29,7 @@
                 CornerRadius="14"
                 Padding="14,8"
                 VerticalAlignment="Center">
-          <TextBlock Text="v3.0 • Professional Release"
+          <TextBlock Text="v3.2 • Professional Release"
                      Foreground="#FCA5A5"
                      FontWeight="Bold"/>
         </Border>
@@ -484,6 +484,8 @@
 
   </Grid>
 </Window>
+
+
 
 
 
