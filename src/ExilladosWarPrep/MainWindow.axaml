@@ -29,14 +29,14 @@
                 CornerRadius="14"
                 Padding="14,8"
                 VerticalAlignment="Center">
-          <TextBlock Text="v2.5.1 • Sensores corrigidos"
+          <TextBlock Text="v2.8 • Processos visuais"
                      Foreground="#FCA5A5"
                      FontWeight="Bold"/>
         </Border>
       </Grid>
     </Border>
 
-    <Border Grid.Row="1" Grid.Column="0" Background="#0F172A" Padding="18">
+        <Border Grid.Row="1" Grid.Column="0" Background="#0F172A" Padding="16">
       <ScrollViewer>
         <StackPanel Spacing="14">
 
@@ -46,113 +46,175 @@
                          Foreground="#F9FAFB"
                          FontSize="22"
                          FontWeight="Bold"/>
-              <TextBlock Text="Este programa não mexe no BDO, não é cheat, não coleta dados pessoais e tudo que alterar deverá ser reversível."
+              <TextBlock Text="Central gamer gratuita para diagnóstico, preparação e reparo seguro antes da Node War."
                          Foreground="#CBD5E1"
                          TextWrapping="Wrap"/>
             </StackPanel>
           </Border>
 
           <Border Background="#172033" CornerRadius="16" Padding="14">
-            <StackPanel Spacing="8">
-              <TextBlock Text="Tipo de exame de rede"
-                         Foreground="#F9FAFB"
-                         FontWeight="Bold"/>
-              <ComboBox x:Name="ModoTesteCombo"
-                        SelectedIndex="0"
-                        HorizontalAlignment="Stretch">
-                <ComboBoxItem Content="Curto — rápido antes da Node"/>
-                <ComboBoxItem Content="Médio — recomendado"/>
-                <ComboBoxItem Content="Longo — diagnóstico detalhado"/>
-              </ComboBox>
-              <TextBlock Text="Curto: rápido. Médio: mais confiável. Longo: melhor para investigar instabilidade."
-                         Foreground="#94A3B8"
-                         TextWrapping="Wrap"
-                         FontSize="12"/>
+            <StackPanel Spacing="10">
+              <TextBlock Text="🛡️ INÍCIO / PRÉ-NODE"
+                         Foreground="#FCA5A5"
+                         FontWeight="Bold"
+                         FontSize="13"/>
+
+              <Button Content="⚔️ Preparar para Guerra"
+                      Click="OnPrepararClick"
+                      Height="42"
+                      FontSize="14"/>
             </StackPanel>
           </Border>
 
-          <Button Content="🖥️ Diagnóstico Gamer"
-                  Click="OnDiagnosticoGamerClick"
-                  Height="46"
-                  FontSize="15"/>
+          <Border Background="#172033" CornerRadius="16" Padding="14">
+            <StackPanel Spacing="10">
+              <TextBlock Text="🌐 REDE"
+                         Foreground="#93C5FD"
+                         FontWeight="Bold"
+                         FontSize="13"/>
 
-          <Button Content="🌡️ Temperaturas"
-                  Click="OnTemperaturasClick"
-                  Height="46"
-                  FontSize="15"/>
+              <StackPanel Spacing="6">
+                <TextBlock Text="Tipo de exame"
+                           Foreground="#F9FAFB"
+                           FontWeight="Bold"/>
+                <ComboBox x:Name="ModoTesteCombo"
+                          SelectedIndex="0"
+                          HorizontalAlignment="Stretch">
+                  <ComboBoxItem Content="Curto — rápido antes da Node"/>
+                  <ComboBoxItem Content="Médio — recomendado"/>
+                  <ComboBoxItem Content="Longo — diagnóstico detalhado"/>
+                </ComboBox>
+                <TextBlock Text="Curto: rápido. Médio: confiável. Longo: melhor para investigar instabilidade."
+                           Foreground="#94A3B8"
+                           TextWrapping="Wrap"
+                           FontSize="12"/>
+              </StackPanel>
 
-          <Button Content="🕵️ Processos Suspeitos"
-                  Click="OnProcessosSuspeitosClick"
-                  Height="46"
-                  FontSize="15"/>
+              <Button Content="🔎 Diagnosticar PC e Rede"
+                      Click="OnDiagnosticarClick"
+                      Height="42"
+                      FontSize="14"/>
+            </StackPanel>
+          </Border>
 
-          <Button Content="🩺 Verificar Windows"
-                  Click="OnVerificarWindowsClick"
-                  Height="46"
-                  FontSize="15"/>
+          <Border Background="#172033" CornerRadius="16" Padding="14">
+            <StackPanel Spacing="10">
+              <TextBlock Text="🖥️ HARDWARE GAMER"
+                         Foreground="#86EFAC"
+                         FontWeight="Bold"
+                         FontSize="13"/>
 
-          <Button Content="🔧 Reparar Windows"
-                  Click="OnRepararWindowsClick"
-                  Height="46"
-                  FontSize="15"/>
+              <Button Content="🖥️ Diagnóstico Gamer"
+                      Click="OnDiagnosticoGamerClick"
+                      Height="42"
+                      FontSize="14"/>
 
-          <Button Content="🔎 Diagnosticar PC e Rede"
-                  Click="OnDiagnosticarClick"
-                  Height="46"
-                  FontSize="15"/>
+              <Button Content="🌡️ Temperaturas"
+                      Click="OnTemperaturasClick"
+                      Height="42"
+                      FontSize="14"/>
+            </StackPanel>
+          </Border>
 
-          <Button Content="⚔️ Preparar para Guerra"
-                  Click="OnPrepararClick"
-                  Height="46"
-                  FontSize="15"/>
+          <Border Background="#172033" CornerRadius="16" Padding="14">
+            <StackPanel Spacing="10">
+              <TextBlock Text="⚔️ PREPARAÇÃO"
+                         Foreground="#FDE68A"
+                         FontWeight="Bold"
+                         FontSize="13"/>
 
-          <Button Content="🧹 Limpar Temporários Seguros"
-                  Click="OnLimparTempClick"
-                  Height="46"
-                  FontSize="15"/>
+              <Button Content="📋 Listar Apps Seguros"
+                      Click="OnFecharAppsClick"
+                      Height="42"
+                      FontSize="14"/>
 
-          <Button Content="📋 Listar Apps Seguros"
-                  Click="OnFecharAppsClick"
-                  Height="46"
-                  FontSize="15"/>
+              <Button Content="✅ Fechar Apps Marcados"
+                      Click="OnFecharSelecionadosClick"
+                      Height="42"
+                      FontSize="14"/>
 
-          <Button Content="✅ Fechar Apps Marcados"
-                  Click="OnFecharSelecionadosClick"
-                  Height="46"
-                  FontSize="15"/>
+              <Button Content="🧹 Limpar Temporários Seguros"
+                      Click="OnLimparTempClick"
+                      Height="42"
+                      FontSize="14"/>
 
-          <Button Content="🎮 Ativar Modo Jogo"
-                  Click="OnModoJogoClick"
-                  Height="46"
-                  FontSize="15"/>
-          <Button Content="⚡ Energia Alto Desempenho"
-                  Click="OnEnergiaClick"
-                  Height="46"
-                  FontSize="15"/>
+              <Button Content="🎮 Ativar Modo Jogo"
+                      Click="OnModoJogoClick"
+                      Height="42"
+                      FontSize="14"/>
 
-          <Button Content="↩ Restaurar Configurações"
-                  Click="OnRestaurarClick"
-                  Height="46"
-                  FontSize="15"/>
+              <Button Content="⚡ Energia Alto Desempenho"
+                      Click="OnEnergiaClick"
+                      Height="42"
+                      FontSize="14"/>
 
-          <Button Content="📋 Copiar Relatório"
-                  Click="OnCopiarRelatorioClick"
-                  Height="46"
-                  FontSize="15"/>
+              <Button Content="↩ Restaurar Configurações"
+                      Click="OnRestaurarClick"
+                      Height="42"
+                      FontSize="14"/>
+            </StackPanel>
+          </Border>
 
-          <Button Content="💾 Salvar Relatório"
-                  Click="OnSalvarRelatorioClick"
-                  Height="46"
-                  FontSize="15"/>
+          <Border Background="#172033" CornerRadius="16" Padding="14">
+            <StackPanel Spacing="10">
+              <TextBlock Text="🩺 WINDOWS / REPARO"
+                         Foreground="#F9A8D4"
+                         FontWeight="Bold"
+                         FontSize="13"/>
 
-          <Button Content="📁 Abrir Relatórios"
-                  Click="OnAbrirRelatoriosClick"
-                  Height="46"
-                  FontSize="15"/>
+              <Button Content="🩺 Verificar Windows"
+                      Click="OnVerificarWindowsClick"
+                      Height="42"
+                      FontSize="14"/>
 
-          <Border Background="#172033" CornerRadius="14" Padding="14" Margin="0,10,0,0">
+              <Button Content="🔧 Reparar Windows"
+                      Click="OnRepararWindowsClick"
+                      Height="42"
+                      FontSize="14"/>
+            </StackPanel>
+          </Border>
+
+          <Border Background="#172033" CornerRadius="16" Padding="14">
+            <StackPanel Spacing="10">
+              <TextBlock Text="🕵️ SEGURANÇA"
+                         Foreground="#C4B5FD"
+                         FontWeight="Bold"
+                         FontSize="13"/>
+
+              <Button Content="🕵️ Processos Suspeitos"
+                      Click="OnProcessosSuspeitosClick"
+                      Height="42"
+                      FontSize="14"/>
+            </StackPanel>
+          </Border>
+
+          <Border Background="#172033" CornerRadius="16" Padding="14">
+            <StackPanel Spacing="10">
+              <TextBlock Text="📁 RELATÓRIOS"
+                         Foreground="#67E8F9"
+                         FontWeight="Bold"
+                         FontSize="13"/>
+
+              <Button Content="📋 Copiar Relatório"
+                      Click="OnCopiarRelatorioClick"
+                      Height="42"
+                      FontSize="14"/>
+
+              <Button Content="💾 Salvar Relatório"
+                      Click="OnSalvarRelatorioClick"
+                      Height="42"
+                      FontSize="14"/>
+
+              <Button Content="📁 Abrir Relatórios"
+                      Click="OnAbrirRelatoriosClick"
+                      Height="42"
+                      FontSize="14"/>
+            </StackPanel>
+          </Border>
+
+          <Border Background="#111827" CornerRadius="14" Padding="14">
             <StackPanel Spacing="7">
-              <TextBlock Text="Princípios do projeto"
+              <TextBlock Text="Princípios"
                          Foreground="#F9FAFB"
                          FontWeight="Bold"/>
               <TextBlock Text="✅ Gratuito" Foreground="#CBD5E1"/>
@@ -166,8 +228,7 @@
         </StackPanel>
       </ScrollViewer>
     </Border>
-
-    <ScrollViewer Grid.Row="1" Grid.Column="1">
+<ScrollViewer Grid.Row="1" Grid.Column="1">
       <StackPanel Margin="24" Spacing="18">
 
         <Border Background="#111827" CornerRadius="18" Padding="22">
@@ -386,6 +447,23 @@
                             Spacing="6"/>
               </StackPanel>
             </Border>
+                        <Border Background="#0B1220" CornerRadius="14" Padding="12" Margin="0,0,0,12">
+              <StackPanel Spacing="8">
+                <TextBlock Text="Classificação visual dos processos"
+                           Foreground="#F9FAFB"
+                           FontWeight="Bold"
+                           FontSize="16"/>
+
+                <TextBlock x:Name="ProcessosVisuaisAvisoText"
+                           Text="Clique em Preparar para Guerra para classificar processos por segurança."
+                           Foreground="#94A3B8"
+                           TextWrapping="Wrap"
+                           FontSize="12"/>
+
+                <StackPanel x:Name="ProcessosVisuaisPanel"
+                            Spacing="8"/>
+              </StackPanel>
+            </Border>
             <TextBlock Text="Relatório para Discord"
                        Foreground="#F9FAFB"
                        FontSize="18"
@@ -406,6 +484,15 @@
 
   </Grid>
 </Window>
+
+
+
+
+
+
+
+
+
 
 
 
