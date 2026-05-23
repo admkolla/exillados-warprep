@@ -1,7 +1,7 @@
 ﻿<Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         x:Class="PerformanceCenter.MainWindow"
-        Title="Exillados WarPrep"
+        Title="Performance Center"
         Width="1260"
         Height="840"
         MinWidth="1120"
@@ -13,11 +13,11 @@
     <Border Grid.Row="0" Grid.ColumnSpan="2" Background="#101722" Padding="22,16">
       <Grid ColumnDefinitions="*,Auto">
         <StackPanel>
-          <TextBlock Text="EXILLADOS WARPREP"
+          <TextBlock Text="PERFORMANCE CENTER"
                      Foreground="#F9FAFB"
                      FontSize="28"
                      FontWeight="Bold"/>
-          <TextBlock Text="Preparação segura, gratuita e open-source para Node War"
+          <TextBlock Text="Diagnóstico, otimização e manutenção segura do sistema"
                      Foreground="#9CA3AF"
                      FontSize="14"/>
         </StackPanel>
@@ -29,7 +29,7 @@
                 CornerRadius="14"
                 Padding="14,8"
                 VerticalAlignment="Center">
-          <TextBlock Text="v3.2 • Professional Release"
+          <TextBlock Text="v3.4 • Professional Release"
                      Foreground="#FCA5A5"
                      FontWeight="Bold"/>
         </Border>
@@ -80,7 +80,7 @@
                 <ComboBox x:Name="ModoTesteCombo"
                           SelectedIndex="0"
                           HorizontalAlignment="Stretch">
-                  <ComboBoxItem Content="Curto — rápido antes da Node"/>
+                  <ComboBoxItem Content="Curto — rápido"/>
                   <ComboBoxItem Content="Médio — recomendado"/>
                   <ComboBoxItem Content="Longo — diagnóstico detalhado"/>
                 </ComboBox>
@@ -233,6 +233,219 @@
 
         <Border Background="#111827" CornerRadius="18" Padding="22">
           <StackPanel Spacing="8">
+                                                <Border Background="#0B1220" CornerRadius="20" Padding="18" Margin="0,0,0,14">
+              <StackPanel Spacing="16">
+
+                <Grid ColumnDefinitions="*,Auto,Auto" ColumnSpacing="10">
+                  <StackPanel Grid.Column="0" Spacing="4">
+                    <TextBlock Text="Dashboard"
+                               Foreground="#F8FAFC"
+                               FontSize="25"
+                               FontWeight="Bold"/>
+                    <TextBlock Text="Painel rápido com métricas de rede, sensores, memória e integridade."
+                               Foreground="#94A3B8"
+                               TextWrapping="Wrap"
+                               FontSize="13"/>
+                  </StackPanel>
+
+                  <Button Grid.Column="1"
+                          Content="Atualizar painel"
+                          Click="OnDashboardRefreshClick"
+                          Height="42"
+                          Padding="18,0"
+                          FontSize="14"/>
+
+                  <Button Grid.Column="2"
+                          Content="Verificação geral"
+                          Click="OnDiagnosticarClick"
+                          Height="42"
+                          Padding="18,0"
+                          FontSize="14"/>
+                </Grid>
+
+                <Grid ColumnDefinitions="*,*,*,*,*" ColumnSpacing="10">
+
+                  <Button Grid.Column="0"
+                          Click="OnDiagnosticarClick"
+                          Padding="0"
+                          Background="Transparent"
+                          BorderThickness="0">
+                    <Border Background="#111827" CornerRadius="16" Padding="14" MinHeight="122">
+                      <StackPanel Spacing="7">
+                        <TextBlock Text="REDE"
+                                   Foreground="#38BDF8"
+                                   FontWeight="Bold"
+                                   FontSize="12"/>
+                        <TextBlock x:Name="DashboardRedeValorText"
+                                   Text="-- ms"
+                                   Foreground="#F8FAFC"
+                                   FontSize="32"
+                                   FontFamily="Consolas"
+                                   FontWeight="Bold"/>
+                        <TextBlock Text="Latência"
+                                   Foreground="#CBD5E1"
+                                   FontSize="13"/>
+                        <Border Background="#0F2A3A" CornerRadius="8" Padding="8,4">
+                          <TextBlock x:Name="DashboardRedeStatusText"
+                                     Text="Clique para testar"
+                                     Foreground="#7DD3FC"
+                                     FontSize="12"
+                                     HorizontalAlignment="Center"/>
+                        </Border>
+                      </StackPanel>
+                    </Border>
+                  </Button>
+
+                  <Button Grid.Column="1"
+                          Click="OnTemperaturasClick"
+                          Padding="0"
+                          Background="Transparent"
+                          BorderThickness="0">
+                    <Border Background="#111827" CornerRadius="16" Padding="14" MinHeight="122">
+                      <StackPanel Spacing="7">
+                        <TextBlock Text="GPU"
+                                   Foreground="#FDE68A"
+                                   FontWeight="Bold"
+                                   FontSize="12"/>
+                        <TextBlock x:Name="DashboardGpuValorText"
+                                   Text="-- °C"
+                                   Foreground="#F8FAFC"
+                                   FontSize="32"
+                                   FontFamily="Consolas"
+                                   FontWeight="Bold"/>
+                        <TextBlock Text="Temperatura"
+                                   Foreground="#CBD5E1"
+                                   FontSize="13"/>
+                        <Border Background="#332B0B" CornerRadius="8" Padding="8,4">
+                          <TextBlock x:Name="DashboardGpuStatusText"
+                                     Text="Sensores"
+                                     Foreground="#FDE68A"
+                                     FontSize="12"
+                                     HorizontalAlignment="Center"/>
+                        </Border>
+                      </StackPanel>
+                    </Border>
+                  </Button>
+
+                  <Button Grid.Column="2"
+                          Click="OnTemperaturasClick"
+                          Padding="0"
+                          Background="Transparent"
+                          BorderThickness="0">
+                    <Border Background="#111827" CornerRadius="16" Padding="14" MinHeight="122">
+                      <StackPanel Spacing="7">
+                        <TextBlock Text="CPU"
+                                   Foreground="#A7F3D0"
+                                   FontWeight="Bold"
+                                   FontSize="12"/>
+                        <TextBlock x:Name="DashboardCpuValorText"
+                                   Text="-- %"
+                                   Foreground="#F8FAFC"
+                                   FontSize="32"
+                                   FontFamily="Consolas"
+                                   FontWeight="Bold"/>
+                        <TextBlock Text="Uso atual"
+                                   Foreground="#CBD5E1"
+                                   FontSize="13"/>
+                        <Border Background="#0B2F22" CornerRadius="8" Padding="8,4">
+                          <TextBlock x:Name="DashboardCpuStatusText"
+                                     Text="Monitorar"
+                                     Foreground="#86EFAC"
+                                     FontSize="12"
+                                     HorizontalAlignment="Center"/>
+                        </Border>
+                      </StackPanel>
+                    </Border>
+                  </Button>
+
+                  <Button Grid.Column="3"
+                          Click="OnFecharAppsClick"
+                          Padding="0"
+                          Background="Transparent"
+                          BorderThickness="0">
+                    <Border Background="#111827" CornerRadius="16" Padding="14" MinHeight="122">
+                      <StackPanel Spacing="7">
+                        <TextBlock Text="RAM"
+                                   Foreground="#FCA5A5"
+                                   FontWeight="Bold"
+                                   FontSize="12"/>
+                        <TextBlock x:Name="DashboardRamValorText"
+                                   Text="-- %"
+                                   Foreground="#F8FAFC"
+                                   FontSize="32"
+                                   FontFamily="Consolas"
+                                   FontWeight="Bold"/>
+                        <TextBlock Text="Memória"
+                                   Foreground="#CBD5E1"
+                                   FontSize="13"/>
+                        <Border Background="#3A1111" CornerRadius="8" Padding="8,4">
+                          <TextBlock x:Name="DashboardRamStatusText"
+                                     Text="Analisar processos"
+                                     Foreground="#FCA5A5"
+                                     FontSize="12"
+                                     HorizontalAlignment="Center"/>
+                        </Border>
+                      </StackPanel>
+                    </Border>
+                  </Button>
+
+                  <Button Grid.Column="4"
+                          Click="OnVerificarWindowsClick"
+                          Padding="0"
+                          Background="Transparent"
+                          BorderThickness="0">
+                    <Border Background="#111827" CornerRadius="16" Padding="14" MinHeight="122">
+                      <StackPanel Spacing="7">
+                        <TextBlock Text="WINDOWS"
+                                   Foreground="#C4B5FD"
+                                   FontWeight="Bold"
+                                   FontSize="12"/>
+                        <TextBlock x:Name="DashboardWindowsValorText"
+                                   Text="OK?"
+                                   Foreground="#F8FAFC"
+                                   FontSize="32"
+                                   FontFamily="Consolas"
+                                   FontWeight="Bold"/>
+                        <TextBlock Text="Integridade"
+                                   Foreground="#CBD5E1"
+                                   FontSize="13"/>
+                        <Border Background="#261B3D" CornerRadius="8" Padding="8,4">
+                          <TextBlock x:Name="DashboardWindowsStatusText"
+                                     Text="Verificar"
+                                     Foreground="#C4B5FD"
+                                     FontSize="12"
+                                     HorizontalAlignment="Center"/>
+                        </Border>
+                      </StackPanel>
+                    </Border>
+                  </Button>
+
+                </Grid>
+
+                <Border Background="#07111F" CornerRadius="14" Padding="14">
+                  <Grid ColumnDefinitions="*,Auto">
+                    <StackPanel Grid.Column="0" Spacing="4">
+                      <TextBlock Text="Otimização recomendada"
+                                 Foreground="#F8FAFC"
+                                 FontSize="17"
+                                 FontWeight="Bold"/>
+                      <TextBlock Text="Executa uma análise segura do sistema e mostra recomendações sem aplicar mudanças automáticas."
+                                 Foreground="#94A3B8"
+                                 TextWrapping="Wrap"
+                                 FontSize="13"/>
+                    </StackPanel>
+
+                    <Button Grid.Column="1"
+                            Content="Iniciar"
+                            Click="OnPrepararClick"
+                            Height="42"
+                            Padding="22,0"
+                            FontSize="14"/>
+                  </Grid>
+                </Border>
+
+              </StackPanel>
+            </Border>
             <TextBlock x:Name="StatusTitle"
                        Text="Quartel de preparação"
                        Foreground="#F9FAFB"
@@ -469,7 +682,7 @@
                        FontSize="18"
                        FontWeight="Bold"/>
             <TextBox x:Name="RelatorioBox"
-                     Text="Exillados WarPrep v0.4.1 pronto. Nenhum diagnóstico executado ainda."
+                     Text="Exillados Performance Center v0.4.1 pronto. Nenhum diagnóstico executado ainda."
                      AcceptsReturn="True"
                      IsReadOnly="True"
                      TextWrapping="Wrap"
@@ -484,6 +697,9 @@
 
   </Grid>
 </Window>
+
+
+
 
 
 

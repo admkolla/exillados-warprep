@@ -27,6 +27,7 @@ public partial class MainWindow : Window
     public MainWindow()
     {
         InitializeComponent();
+        _ = AtualizarDashboardRapidoAsync();
         RelatorioBox.Text = _ultimoRelatorio;
     }
 
@@ -1022,6 +1023,7 @@ else {
         }
     }
 }
+
 
 
 
