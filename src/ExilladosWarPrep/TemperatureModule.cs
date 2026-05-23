@@ -90,7 +90,7 @@ public partial class MainWindow
     {
         var sb = new StringBuilder();
 
-        sb.AppendLine("===== EXILLADOS WARPREP v2.8 =====");
+        sb.AppendLine("===== EXILLADOS WARPREP v3.0 =====");
         sb.AppendLine();
         sb.AppendLine("🌡️ TEMPERATURAS E SENSORES GAMER");
         sb.AppendLine();
@@ -280,6 +280,8 @@ public partial class MainWindow
         string Unidade
     );
 }
+
+
 
 
 

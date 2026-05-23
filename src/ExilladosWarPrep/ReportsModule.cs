@@ -57,7 +57,7 @@ public partial class MainWindow
             ResumoText.Text = "Não foi possível salvar o arquivo.";
 
             _ultimoRelatorio =
-                "===== EXILLADOS WARPREP v2.8 =====\n\n" +
+                "===== EXILLADOS WARPREP v3.0 =====\n\n" +
                 "ERRO AO SALVAR RELATÓRIO:\n\n" +
                 ex.Message + "\n";
 
@@ -84,7 +84,7 @@ public partial class MainWindow
             ResumoText.Text = "A pasta de relatórios do Exillados WarPrep foi aberta na Área de Trabalho.";
 
             _ultimoRelatorio =
-                "===== EXILLADOS WARPREP v2.8 =====\n\n" +
+                "===== EXILLADOS WARPREP v3.0 =====\n\n" +
                 "PASTA DE RELATÓRIOS:\n\n" +
                 $"Caminho: {pasta}\n\n" +
                 "Use esta pasta para encontrar os relatórios .txt salvos pelo WarPrep.\n";
@@ -98,7 +98,7 @@ public partial class MainWindow
             ResumoText.Text = "Não foi possível abrir a pasta de relatórios.";
 
             _ultimoRelatorio =
-                "===== EXILLADOS WARPREP v2.8 =====\n\n" +
+                "===== EXILLADOS WARPREP v3.0 =====\n\n" +
                 "ERRO AO ABRIR PASTA DE RELATÓRIOS:\n\n" +
                 ex.Message + "\n";
 
@@ -113,6 +113,8 @@ public partial class MainWindow
         return System.IO.Path.Combine(desktop, "Exillados WarPrep - Relatorios");
     }
 }
+
+
 
 
 

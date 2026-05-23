@@ -29,7 +29,7 @@
                 CornerRadius="14"
                 Padding="14,8"
                 VerticalAlignment="Center">
-          <TextBlock Text="v2.8 • Processos visuais"
+          <TextBlock Text="v3.0 • Professional Release"
                      Foreground="#FCA5A5"
                      FontWeight="Bold"/>
         </Border>
@@ -42,11 +42,11 @@
 
           <Border Background="#111827" CornerRadius="16" Padding="16">
             <StackPanel Spacing="6">
-              <TextBlock Text="🛡️ Exillados"
+              <TextBlock Text="Performance Center"
                          Foreground="#F9FAFB"
                          FontSize="22"
                          FontWeight="Bold"/>
-              <TextBlock Text="Central gamer gratuita para diagnóstico, preparação e reparo seguro antes da Node War."
+              <TextBlock Text="Diagnóstico, otimização e manutenção segura do sistema."
                          Foreground="#CBD5E1"
                          TextWrapping="Wrap"/>
             </StackPanel>
@@ -54,12 +54,12 @@
 
           <Border Background="#172033" CornerRadius="16" Padding="14">
             <StackPanel Spacing="10">
-              <TextBlock Text="🛡️ INÍCIO / PRÉ-NODE"
+              <TextBlock Text="📊 DASHBOARD"
                          Foreground="#FCA5A5"
                          FontWeight="Bold"
                          FontSize="13"/>
 
-              <Button Content="⚔️ Preparar para Guerra"
+              <Button Content="⚙️ Otimização Recomendada"
                       Click="OnPrepararClick"
                       Height="42"
                       FontSize="14"/>
@@ -90,7 +90,7 @@
                            FontSize="12"/>
               </StackPanel>
 
-              <Button Content="🔎 Diagnosticar PC e Rede"
+              <Button Content="🔎 Verificação Geral"
                       Click="OnDiagnosticarClick"
                       Height="42"
                       FontSize="14"/>
@@ -99,12 +99,12 @@
 
           <Border Background="#172033" CornerRadius="16" Padding="14">
             <StackPanel Spacing="10">
-              <TextBlock Text="🖥️ HARDWARE GAMER"
+              <TextBlock Text="🖥️ HARDWARE E SENSORES"
                          Foreground="#86EFAC"
                          FontWeight="Bold"
                          FontSize="13"/>
 
-              <Button Content="🖥️ Diagnóstico Gamer"
+              <Button Content="🖥️ Diagnóstico de Hardware"
                       Click="OnDiagnosticoGamerClick"
                       Height="42"
                       FontSize="14"/>
@@ -118,32 +118,32 @@
 
           <Border Background="#172033" CornerRadius="16" Padding="14">
             <StackPanel Spacing="10">
-              <TextBlock Text="⚔️ PREPARAÇÃO"
+              <TextBlock Text="⚙️ OTIMIZAÇÃO"
                          Foreground="#FDE68A"
                          FontWeight="Bold"
                          FontSize="13"/>
 
-              <Button Content="📋 Listar Apps Seguros"
+              <Button Content="📋 Analisar Processos"
                       Click="OnFecharAppsClick"
                       Height="42"
                       FontSize="14"/>
 
-              <Button Content="✅ Fechar Apps Marcados"
+              <Button Content="✅ Encerrar Selecionados"
                       Click="OnFecharSelecionadosClick"
                       Height="42"
                       FontSize="14"/>
 
-              <Button Content="🧹 Limpar Temporários Seguros"
+              <Button Content="🧹 Limpeza Segura"
                       Click="OnLimparTempClick"
                       Height="42"
                       FontSize="14"/>
 
-              <Button Content="🎮 Ativar Modo Jogo"
+              <Button Content="🎮 Otimizações do Windows"
                       Click="OnModoJogoClick"
                       Height="42"
                       FontSize="14"/>
 
-              <Button Content="⚡ Energia Alto Desempenho"
+              <Button Content="⚡ Plano de Alto Desempenho"
                       Click="OnEnergiaClick"
                       Height="42"
                       FontSize="14"/>
@@ -157,7 +157,7 @@
 
           <Border Background="#172033" CornerRadius="16" Padding="14">
             <StackPanel Spacing="10">
-              <TextBlock Text="🩺 WINDOWS / REPARO"
+              <TextBlock Text="🩺 INTEGRIDADE DO WINDOWS"
                          Foreground="#F9A8D4"
                          FontWeight="Bold"
                          FontSize="13"/>
@@ -181,7 +181,7 @@
                          FontWeight="Bold"
                          FontSize="13"/>
 
-              <Button Content="🕵️ Processos Suspeitos"
+              <Button Content="🕵️ Análise de Processos"
                       Click="OnProcessosSuspeitosClick"
                       Height="42"
                       FontSize="14"/>
@@ -190,22 +190,22 @@
 
           <Border Background="#172033" CornerRadius="16" Padding="14">
             <StackPanel Spacing="10">
-              <TextBlock Text="📁 RELATÓRIOS"
+              <TextBlock Text="📁 RELATÓRIOS TÉCNICOS"
                          Foreground="#67E8F9"
                          FontWeight="Bold"
                          FontSize="13"/>
 
-              <Button Content="📋 Copiar Relatório"
+              <Button Content="📋 Copiar Relatório Técnico"
                       Click="OnCopiarRelatorioClick"
                       Height="42"
                       FontSize="14"/>
 
-              <Button Content="💾 Salvar Relatório"
+              <Button Content="💾 Salvar Relatório Técnico"
                       Click="OnSalvarRelatorioClick"
                       Height="42"
                       FontSize="14"/>
 
-              <Button Content="📁 Abrir Relatórios"
+              <Button Content="📁 Abrir Relatórios Técnicos"
                       Click="OnAbrirRelatoriosClick"
                       Height="42"
                       FontSize="14"/>
@@ -214,14 +214,14 @@
 
           <Border Background="#111827" CornerRadius="14" Padding="14">
             <StackPanel Spacing="7">
-              <TextBlock Text="Princípios"
+              <TextBlock Text="Princípios do produto"
                          Foreground="#F9FAFB"
                          FontWeight="Bold"/>
               <TextBlock Text="✅ Gratuito" Foreground="#CBD5E1"/>
               <TextBlock Text="✅ Open-source" Foreground="#CBD5E1"/>
               <TextBlock Text="✅ Seguro" Foreground="#CBD5E1"/>
               <TextBlock Text="✅ Reversível" Foreground="#CBD5E1"/>
-              <TextBlock Text="✅ Sem falcatrua" Foreground="#CBD5E1"/>
+              <TextBlock Text="✅ Transparente" Foreground="#CBD5E1"/>
             </StackPanel>
           </Border>
 
@@ -455,7 +455,7 @@
                            FontSize="16"/>
 
                 <TextBlock x:Name="ProcessosVisuaisAvisoText"
-                           Text="Clique em Preparar para Guerra para classificar processos por segurança."
+                           Text="Execute a otimização recomendada para classificar processos por impacto e segurança."
                            Foreground="#94A3B8"
                            TextWrapping="Wrap"
                            FontSize="12"/>
@@ -464,7 +464,7 @@
                             Spacing="8"/>
               </StackPanel>
             </Border>
-            <TextBlock Text="Relatório para Discord"
+            <TextBlock Text="Relatório técnico"
                        Foreground="#F9FAFB"
                        FontSize="18"
                        FontWeight="Bold"/>
@@ -484,6 +484,8 @@
 
   </Grid>
 </Window>
+
+
 
 
 

@@ -1,12 +1,18 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    <AssemblyName>PerformanceCenter</AssemblyName>
+    <Product>Performance Center</Product>
+    <Description>Professional system diagnostics, optimization and maintenance toolkit.</Description>
+    <Company>Independent</Company>
+    <Version>3.0.0</Version>
+    <FileVersion>3.0.0</FileVersion>
+    <InformationalVersion>3.0 Professional Release</InformationalVersion>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="12.0.3" />
     <PackageReference Include="Avalonia.Desktop" Version="12.0.3" />

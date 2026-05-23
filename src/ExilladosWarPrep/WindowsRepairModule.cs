@@ -15,7 +15,7 @@ public partial class MainWindow
             ResumoText.Text = "Esta função só está disponível no Windows.";
 
             _ultimoRelatorio =
-                "===== EXILLADOS WARPREP v2.8 =====\n\n" +
+                "===== EXILLADOS WARPREP v3.0 =====\n\n" +
                 "REPARAR WINDOWS:\n\n" +
                 "Esta função só está disponível no Windows.\n" +
                 "Nenhuma alteração foi aplicada.\n";
@@ -35,7 +35,7 @@ public partial class MainWindow
             ResumoText.Text = "Para reparar o Windows, feche o WarPrep e abra como Administrador.";
 
             _ultimoRelatorio =
-                "===== EXILLADOS WARPREP v2.8 =====\n\n" +
+                "===== EXILLADOS WARPREP v3.0 =====\n\n" +
                 "REPARAR WINDOWS:\n\n" +
                 "⚠️ O WarPrep não está executando como Administrador.\n\n" +
                 "Para usar o reparo:\n" +
@@ -58,7 +58,7 @@ public partial class MainWindow
             ResumoText.Text = "Clique novamente em Reparar Windows para iniciar DISM RestoreHealth e SFC Scannow.";
 
             _ultimoRelatorio =
-                "===== EXILLADOS WARPREP v2.8 =====\n\n" +
+                "===== EXILLADOS WARPREP v3.0 =====\n\n" +
                 "CONFIRMAÇÃO — REPARAR WINDOWS:\n\n" +
                 "NADA FOI REPARADO AINDA.\n\n" +
                 "O diagnóstico anterior indicou que o repositório de componentes do Windows é reparável.\n\n" +
@@ -83,7 +83,7 @@ public partial class MainWindow
 
         var sb = new StringBuilder();
 
-        sb.AppendLine("===== EXILLADOS WARPREP v2.8 =====");
+        sb.AppendLine("===== EXILLADOS WARPREP v3.0 =====");
         sb.AppendLine();
         sb.AppendLine("🔧 REPARO DO WINDOWS — DISM / SFC");
         sb.AppendLine();
@@ -197,7 +197,7 @@ public partial class MainWindow
         if (!OperatingSystem.IsWindows())
         {
             _ultimoRelatorio =
-                "===== EXILLADOS WARPREP v2.8 =====\n\n" +
+                "===== EXILLADOS WARPREP v3.0 =====\n\n" +
                 "VERIFICAÇÃO DO WINDOWS:\n\n" +
                 "Esta função só está disponível no Windows.\n" +
                 "Nenhuma alteração foi aplicada.\n";
@@ -213,7 +213,7 @@ public partial class MainWindow
 
         var sb = new StringBuilder();
 
-        sb.AppendLine("===== EXILLADOS WARPREP v2.8 =====");
+        sb.AppendLine("===== EXILLADOS WARPREP v3.0 =====");
         sb.AppendLine();
         sb.AppendLine("🩺 VERIFICAÇÃO DO WINDOWS — SFC / DISM");
         sb.AppendLine();
@@ -267,7 +267,7 @@ public partial class MainWindow
         sb.AppendLine(conclusao);
         sb.AppendLine();
         sb.AppendLine("PRÓXIMO PASSO FUTURO:");
-        sb.AppendLine("- v2.8 poderá adicionar reparo com confirmação:");
+        sb.AppendLine("- v3.0 poderá adicionar reparo com confirmação:");
         sb.AppendLine("  DISM /RestoreHealth");
         sb.AppendLine("  sfc /scannow");
         sb.AppendLine("- Reparo só deve rodar como administrador e com confirmação.");
@@ -330,6 +330,8 @@ public partial class MainWindow
         return "ℹ️ Verificação concluída. Leia a saída acima para confirmar se o Windows pediu reparo ou permissões.";
     }
 }
+
+
 
 
 
