@@ -31,7 +31,7 @@ public partial class MainWindow
 
             System.IO.Directory.CreateDirectory(pasta);
 
-            string nomeArquivo = $"warprep-relatorio-{DateTime.Now:yyyyMMdd-HHmmss}.txt";
+            string nomeArquivo = $"Performance Center-relatorio-{DateTime.Now:yyyyMMdd-HHmmss}.txt";
             string caminho = System.IO.Path.Combine(pasta, nomeArquivo);
 
             string conteudo = string.IsNullOrWhiteSpace(_ultimoRelatorio)
@@ -41,7 +41,7 @@ public partial class MainWindow
             System.IO.File.WriteAllText(caminho, conteudo, Encoding.UTF8);
 
             StatusTitle.Text = "Relatório salvo";
-            ResumoText.Text = "O relatório foi salvo na Área de Trabalho, na pasta Exillados WarPrep - Relatorios.";
+            ResumoText.Text = "O relatório foi salvo na Área de Trabalho, na pasta Performance Center - Relatorios.";
 
             _ultimoRelatorio =
                 conteudo +
@@ -57,7 +57,7 @@ public partial class MainWindow
             ResumoText.Text = "Não foi possível salvar o arquivo.";
 
             _ultimoRelatorio =
-                "===== EXILLADOS WARPREP v3.2 =====\n\n" +
+                "===== Performance Center v3.4.4 =====\n\n" +
                 "ERRO AO SALVAR RELATÓRIO:\n\n" +
                 ex.Message + "\n";
 
@@ -81,13 +81,13 @@ public partial class MainWindow
             });
 
             StatusTitle.Text = "Pasta de relatórios aberta";
-            ResumoText.Text = "A pasta de relatórios do Exillados WarPrep foi aberta na Área de Trabalho.";
+            ResumoText.Text = "A pasta de relatórios do Performance Center foi aberta na Área de Trabalho.";
 
             _ultimoRelatorio =
-                "===== EXILLADOS WARPREP v3.2 =====\n\n" +
+                "===== Performance Center v3.4.4 =====\n\n" +
                 "PASTA DE RELATÓRIOS:\n\n" +
                 $"Caminho: {pasta}\n\n" +
-                "Use esta pasta para encontrar os relatórios .txt salvos pelo WarPrep.\n";
+                "Use esta pasta para encontrar os relatórios .txt salvos pelo Performance Center.\n";
 
             RelatorioBox.Text = _ultimoRelatorio;
             SistemaText.Text = _ultimoRelatorio;
@@ -98,7 +98,7 @@ public partial class MainWindow
             ResumoText.Text = "Não foi possível abrir a pasta de relatórios.";
 
             _ultimoRelatorio =
-                "===== EXILLADOS WARPREP v3.2 =====\n\n" +
+                "===== Performance Center v3.4.4 =====\n\n" +
                 "ERRO AO ABRIR PASTA DE RELATÓRIOS:\n\n" +
                 ex.Message + "\n";
 
@@ -110,9 +110,10 @@ public partial class MainWindow
     private static string ObterPastaRelatorios()
     {
         string desktop = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
-        return System.IO.Path.Combine(desktop, "Exillados WarPrep - Relatorios");
+        return System.IO.Path.Combine(desktop, "Performance Center - Relatorios");
     }
 }
+
 
 
 

@@ -24,8 +24,8 @@ public partial class MainWindow
         SistemaText.Text = relatorioPreparacao;
 
         RelatorioBox.Text =
-            "===== EXILLADOS WARPREP v3.2 =====\n\n" +
-            "PREPARAÇÃO PARA GUERRA:\n" +
+            "===== Performance Center v3.4.4 =====\n\n" +
+            "PREPARAÇÃO PARA uso intensivo:\n" +
             relatorioPreparacao + "\n\n" +
             "OBSERVAÇÃO:\n" +
             "Esta versão ainda não fecha programas, não limpa arquivos e não altera configurações.\n" +
@@ -120,13 +120,13 @@ public partial class MainWindow
         pontos = Math.Max(0, Math.Min(100, pontos));
 
         string statusProntidao =
-            pontos >= 90 ? "🟢 PRONTO PARA GUERRA" :
+            pontos >= 90 ? "🟢 PRONTO PARA uso intensivo" :
             pontos >= 70 ? "🟡 ATENÇÃO — dá para jogar, mas tem ajustes recomendados" :
-            "🔴 PRECISA AJUSTE antes da guerra";
+            "🔴 PRECISA AJUSTE antes da uso intensivo";
 
         var sb = new StringBuilder();
 
-        sb.AppendLine("🛡️ CHECKLIST DE GUERRA — EXILLADOS v3.2");
+        sb.AppendLine("🛡️ CHECKLIST DE uso intensivo — Performance Center v3.4.4");
         sb.AppendLine();
 
         sb.AppendLine("🧭 SCORE DE PRONTIDÃO:");
@@ -264,14 +264,14 @@ public partial class MainWindow
 
         AppsSelecionaveisPanel.Children.Clear();
 
-        StatusTitle.Text = "Apps seguros listados";
+        StatusTitle.Text = "Processos analisados listados";
         ResumoText.Text = "Marque apenas os apps que deseja fechar. Nada será fechado até você clicar em Fechar Apps Marcados.";
 
         var sb = new StringBuilder();
 
-        sb.AppendLine("===== EXILLADOS WARPREP v3.2 =====");
+        sb.AppendLine("===== Performance Center v3.4.4 =====");
         sb.AppendLine();
-        sb.AppendLine("LISTA DE APPS SEGUROS PARA MARCAR:");
+        sb.AppendLine("LISTA DE Processos analisados PARA MARCAR:");
         sb.AppendLine();
 
         if (candidatos.Count == 0)
@@ -336,10 +336,10 @@ public partial class MainWindow
             ResumoText.Text = "Marque pelo menos um app seguro antes de pedir fechamento.";
 
             _ultimoRelatorio =
-                "===== EXILLADOS WARPREP v3.2 =====\n\n" +
+                "===== Performance Center v3.4.4 =====\n\n" +
                 "Nenhum app foi marcado para fechamento.\n\n" +
                 "Use primeiro:\n" +
-                "1. 📋 Listar Apps Seguros\n" +
+                "1. 📋 Listar Processos analisados\n" +
                 "2. Marque os apps desejados\n" +
                 "3. Clique em ✅ Fechar Apps Marcados\n";
 
@@ -357,7 +357,7 @@ public partial class MainWindow
 
             var sb = new StringBuilder();
 
-            sb.AppendLine("===== EXILLADOS WARPREP v3.2 =====");
+            sb.AppendLine("===== Performance Center v3.4.4 =====");
             sb.AppendLine();
             sb.AppendLine("CONFIRMAÇÃO DE FECHAMENTO DOS APPS MARCADOS:");
             sb.AppendLine();
@@ -389,11 +389,11 @@ public partial class MainWindow
         var resultado = FecharAppsSelecionados(selecionados);
 
         StatusTitle.Text = "Fechamento dos marcados concluído";
-        ResumoText.Text = "O WarPrep tentou fechar apenas os apps marcados manualmente.";
+        ResumoText.Text = "O Performance Center tentou fechar apenas os apps marcados manualmente.";
 
         var rel = new StringBuilder();
 
-        rel.AppendLine("===== EXILLADOS WARPREP v3.2 =====");
+        rel.AppendLine("===== Performance Center v3.4.4 =====");
         rel.AppendLine();
         rel.AppendLine("RESULTADO DO FECHAMENTO DOS APPS MARCADOS:");
         rel.AppendLine();
@@ -547,10 +547,10 @@ public partial class MainWindow
             _limpezaConfirmacaoPendente = true;
 
             StatusTitle.Text = "Confirmação necessária";
-            ResumoText.Text = "Clique novamente em Limpar Temporários Seguros para confirmar. Apenas arquivos temporários antigos do usuário serão removidos.";
+            ResumoText.Text = "Clique novamente em Limpar Temporários para confirmar. Apenas arquivos temporários antigos do usuário serão removidos.";
 
             _ultimoRelatorio =
-                "===== EXILLADOS WARPREP v3.2 =====\n\n" +
+                "===== Performance Center v3.4.4 =====\n\n" +
                 "CONFIRMAÇÃO DE LIMPEZA SEGURA:\n\n" +
                 $"Pasta temporária analisada: {preview.PastaTemp}\n" +
                 $"Arquivos analisados: {preview.ArquivosAnalisados}\n" +
@@ -558,7 +558,7 @@ public partial class MainWindow
                 $"Tamanho aproximado possível: {FormatarBytes(preview.BytesPossiveis)}\n\n" +
                 "NADA FOI APAGADO AINDA.\n\n" +
                 "Para confirmar, clique novamente no botão:\n" +
-                "🧹 Limpar Temporários Seguros\n\n" +
+                "🧹 Limpar Temporários\n\n" +
                 "Segurança:\n" +
                 "- Só limpa arquivos da pasta temporária do usuário.\n" +
                 "- Só tenta remover arquivos antigos, com mais de 24 horas.\n" +
@@ -578,7 +578,7 @@ public partial class MainWindow
         ResumoText.Text = "Arquivos temporários antigos foram limpos. Arquivos bloqueados/em uso foram ignorados.";
 
         _ultimoRelatorio =
-            "===== EXILLADOS WARPREP v3.2 =====\n\n" +
+            "===== Performance Center v3.4.4 =====\n\n" +
             "RESULTADO DA LIMPEZA SEGURA:\n\n" +
             $"Pasta temporária: {resultado.PastaTemp}\n" +
             $"Arquivos encontrados/analisados: {resultado.ArquivosAnalisados}\n" +
@@ -645,6 +645,7 @@ public partial class MainWindow
         return new CleanupResult(pastaTemp, analisados, removidos, falhas, bytesLiberados);
     }
 }
+
 
 
 

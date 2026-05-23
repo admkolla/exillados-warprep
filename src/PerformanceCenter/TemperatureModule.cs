@@ -90,7 +90,7 @@ public partial class MainWindow
     {
         var sb = new StringBuilder();
 
-        sb.AppendLine("===== EXILLADOS WARPREP v3.2 =====");
+        sb.AppendLine("===== Performance Center v3.4.4 =====");
         sb.AppendLine();
         sb.AppendLine("🌡️ TEMPERATURAS E SENSORES GAMER");
         sb.AppendLine();
@@ -98,13 +98,13 @@ public partial class MainWindow
         sb.AppendLine("- Nem todo PC mostra todos os sensores corretamente.");
         sb.AppendLine("- Temperatura 0°C foi ignorada como leitura inválida.");
         sb.AppendLine("- Warning Temperature e Critical Temperature do NVMe são limites do hardware, não temperatura atual.");
-        sb.AppendLine("- O WarPrep apenas lê sensores; não altera fan, clock, voltagem ou driver.");
+        sb.AppendLine("- O Performance Center apenas lê sensores; não altera fan, clock, voltagem ou driver.");
         sb.AppendLine();
 
         if (leituras.Count == 0)
         {
             sb.AppendLine("⚠️ Nenhum sensor foi lido.");
-            sb.AppendLine("Tente abrir o WarPrep como Administrador e testar novamente.");
+            sb.AppendLine("Tente abrir o Performance Center como Administrador e testar novamente.");
             return sb.ToString();
         }
 
@@ -280,6 +280,7 @@ public partial class MainWindow
         string Unidade
     );
 }
+
 
 
 

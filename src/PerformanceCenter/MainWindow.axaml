@@ -19,28 +19,28 @@
                      FontWeight="Bold"/>
           <TextBlock Text="Diagnóstico, otimização e manutenção segura do sistema"
                      Foreground="#9CA3AF"
-                     FontSize="14"/>
+                     FontSize="13"/>
         </StackPanel>
 
         <Border Grid.Column="1"
                 Background="#2A1111"
                 BorderBrush="#EF4444"
                 BorderThickness="1"
-                CornerRadius="14"
+                CornerRadius="12"
                 Padding="14,8"
                 VerticalAlignment="Center">
-          <TextBlock Text="v3.4 • Professional Release"
+          <TextBlock Text="v3.4.4 • Compact Layout"
                      Foreground="#FCA5A5"
                      FontWeight="Bold"/>
         </Border>
       </Grid>
     </Border>
 
-        <Border Grid.Row="1" Grid.Column="0" Background="#0F172A" Padding="16">
+        <Border Grid.Row="1" Grid.Column="0" Background="#0F172A" Padding="12">
       <ScrollViewer>
-        <StackPanel Spacing="14">
+        <StackPanel Spacing="8">
 
-          <Border Background="#111827" CornerRadius="16" Padding="16">
+          <Border Background="#111827" CornerRadius="13" Padding="12">
             <StackPanel Spacing="6">
               <TextBlock Text="Performance Center"
                          Foreground="#F9FAFB"
@@ -52,8 +52,8 @@
             </StackPanel>
           </Border>
 
-          <Border Background="#172033" CornerRadius="16" Padding="14">
-            <StackPanel Spacing="10">
+          <Border Background="#172033" CornerRadius="13" Padding="14">
+            <StackPanel Spacing="8">
               <TextBlock Text="📊 DASHBOARD"
                          Foreground="#FCA5A5"
                          FontWeight="Bold"
@@ -61,13 +61,13 @@
 
               <Button Content="⚙️ Otimização Recomendada"
                       Click="OnPrepararClick"
-                      Height="42"
-                      FontSize="14"/>
+                      Height="34"
+                      FontSize="13"/>
             </StackPanel>
           </Border>
 
-          <Border Background="#172033" CornerRadius="16" Padding="14">
-            <StackPanel Spacing="10">
+          <Border Background="#172033" CornerRadius="13" Padding="14">
+            <StackPanel Spacing="8">
               <TextBlock Text="🌐 REDE"
                          Foreground="#93C5FD"
                          FontWeight="Bold"
@@ -92,13 +92,13 @@
 
               <Button Content="🔎 Verificação Geral"
                       Click="OnDiagnosticarClick"
-                      Height="42"
-                      FontSize="14"/>
+                      Height="34"
+                      FontSize="13"/>
             </StackPanel>
           </Border>
 
-          <Border Background="#172033" CornerRadius="16" Padding="14">
-            <StackPanel Spacing="10">
+          <Border Background="#172033" CornerRadius="13" Padding="14">
+            <StackPanel Spacing="8">
               <TextBlock Text="🖥️ HARDWARE E SENSORES"
                          Foreground="#86EFAC"
                          FontWeight="Bold"
@@ -106,18 +106,18 @@
 
               <Button Content="🖥️ Diagnóstico de Hardware"
                       Click="OnDiagnosticoGamerClick"
-                      Height="42"
-                      FontSize="14"/>
+                      Height="34"
+                      FontSize="13"/>
 
               <Button Content="🌡️ Temperaturas"
                       Click="OnTemperaturasClick"
-                      Height="42"
-                      FontSize="14"/>
+                      Height="34"
+                      FontSize="13"/>
             </StackPanel>
           </Border>
 
-          <Border Background="#172033" CornerRadius="16" Padding="14">
-            <StackPanel Spacing="10">
+          <Border Background="#172033" CornerRadius="13" Padding="14">
+            <StackPanel Spacing="8">
               <TextBlock Text="⚙️ OTIMIZAÇÃO"
                          Foreground="#FDE68A"
                          FontWeight="Bold"
@@ -125,38 +125,38 @@
 
               <Button Content="📋 Analisar Processos"
                       Click="OnFecharAppsClick"
-                      Height="42"
-                      FontSize="14"/>
+                      Height="34"
+                      FontSize="13"/>
 
               <Button Content="✅ Encerrar Selecionados"
                       Click="OnFecharSelecionadosClick"
-                      Height="42"
-                      FontSize="14"/>
+                      Height="34"
+                      FontSize="13"/>
 
               <Button Content="🧹 Limpeza Segura"
                       Click="OnLimparTempClick"
-                      Height="42"
-                      FontSize="14"/>
+                      Height="34"
+                      FontSize="13"/>
 
               <Button Content="🎮 Otimizações do Windows"
                       Click="OnModoJogoClick"
-                      Height="42"
-                      FontSize="14"/>
+                      Height="34"
+                      FontSize="13"/>
 
               <Button Content="⚡ Plano de Alto Desempenho"
                       Click="OnEnergiaClick"
-                      Height="42"
-                      FontSize="14"/>
+                      Height="34"
+                      FontSize="13"/>
 
               <Button Content="↩ Restaurar Configurações"
                       Click="OnRestaurarClick"
-                      Height="42"
-                      FontSize="14"/>
+                      Height="34"
+                      FontSize="13"/>
             </StackPanel>
           </Border>
 
-          <Border Background="#172033" CornerRadius="16" Padding="14">
-            <StackPanel Spacing="10">
+          <Border Background="#172033" CornerRadius="13" Padding="14">
+            <StackPanel Spacing="8">
               <TextBlock Text="🩺 INTEGRIDADE DO WINDOWS"
                          Foreground="#F9A8D4"
                          FontWeight="Bold"
@@ -164,18 +164,18 @@
 
               <Button Content="🩺 Verificar Windows"
                       Click="OnVerificarWindowsClick"
-                      Height="42"
-                      FontSize="14"/>
+                      Height="34"
+                      FontSize="13"/>
 
               <Button Content="🔧 Reparar Windows"
                       Click="OnRepararWindowsClick"
-                      Height="42"
-                      FontSize="14"/>
+                      Height="34"
+                      FontSize="13"/>
             </StackPanel>
           </Border>
 
-          <Border Background="#172033" CornerRadius="16" Padding="14">
-            <StackPanel Spacing="10">
+          <Border Background="#172033" CornerRadius="13" Padding="14">
+            <StackPanel Spacing="8">
               <TextBlock Text="🕵️ SEGURANÇA"
                          Foreground="#C4B5FD"
                          FontWeight="Bold"
@@ -183,13 +183,13 @@
 
               <Button Content="🕵️ Análise de Processos"
                       Click="OnProcessosSuspeitosClick"
-                      Height="42"
-                      FontSize="14"/>
+                      Height="34"
+                      FontSize="13"/>
             </StackPanel>
           </Border>
 
-          <Border Background="#172033" CornerRadius="16" Padding="14">
-            <StackPanel Spacing="10">
+          <Border Background="#172033" CornerRadius="13" Padding="14">
+            <StackPanel Spacing="8">
               <TextBlock Text="📁 RELATÓRIOS TÉCNICOS"
                          Foreground="#67E8F9"
                          FontWeight="Bold"
@@ -197,22 +197,22 @@
 
               <Button Content="📋 Copiar Relatório Técnico"
                       Click="OnCopiarRelatorioClick"
-                      Height="42"
-                      FontSize="14"/>
+                      Height="34"
+                      FontSize="13"/>
 
               <Button Content="💾 Salvar Relatório Técnico"
                       Click="OnSalvarRelatorioClick"
-                      Height="42"
-                      FontSize="14"/>
+                      Height="34"
+                      FontSize="13"/>
 
               <Button Content="📁 Abrir Relatórios Técnicos"
                       Click="OnAbrirRelatoriosClick"
-                      Height="42"
-                      FontSize="14"/>
+                      Height="34"
+                      FontSize="13"/>
             </StackPanel>
           </Border>
 
-          <Border Background="#111827" CornerRadius="14" Padding="14">
+          <Border Background="#111827" CornerRadius="12" Padding="14">
             <StackPanel Spacing="7">
               <TextBlock Text="Princípios do produto"
                          Foreground="#F9FAFB"
@@ -231,16 +231,16 @@
 <ScrollViewer Grid.Row="1" Grid.Column="1">
       <StackPanel Margin="24" Spacing="18">
 
-        <Border Background="#111827" CornerRadius="18" Padding="22">
+        <Border Background="#111827" CornerRadius="12" Padding="22">
           <StackPanel Spacing="8">
-                                                <Border Background="#0B1220" CornerRadius="20" Padding="18" Margin="0,0,0,14">
-              <StackPanel Spacing="16">
+                                                <Border Background="#0B1220" CornerRadius="20" Padding="14" Margin="0,0,0,14">
+              <StackPanel Spacing="8">
 
-                <Grid ColumnDefinitions="*,Auto,Auto" ColumnSpacing="10">
+                <Grid ColumnDefinitions="*,Auto,Auto" ColumnSpacing="8">
                   <StackPanel Grid.Column="0" Spacing="4">
                     <TextBlock Text="Dashboard"
                                Foreground="#F8FAFC"
-                               FontSize="25"
+                               FontSize="21"
                                FontWeight="Bold"/>
                     <TextBlock Text="Painel rápido com métricas de rede, sensores, memória e integridade."
                                Foreground="#94A3B8"
@@ -251,26 +251,26 @@
                   <Button Grid.Column="1"
                           Content="Atualizar painel"
                           Click="OnDashboardRefreshClick"
-                          Height="42"
-                          Padding="18,0"
-                          FontSize="14"/>
+                          Height="34"
+                          Padding="12,0"
+                          FontSize="13"/>
 
                   <Button Grid.Column="2"
                           Content="Verificação geral"
                           Click="OnDiagnosticarClick"
-                          Height="42"
-                          Padding="18,0"
-                          FontSize="14"/>
+                          Height="34"
+                          Padding="12,0"
+                          FontSize="13"/>
                 </Grid>
 
-                <Grid ColumnDefinitions="*,*,*,*,*" ColumnSpacing="10">
+                <Grid ColumnDefinitions="*,*,*,*,*" ColumnSpacing="8">
 
                   <Button Grid.Column="0"
                           Click="OnDiagnosticarClick"
                           Padding="0"
                           Background="Transparent"
                           BorderThickness="0">
-                    <Border Background="#111827" CornerRadius="16" Padding="14" MinHeight="122">
+                    <Border Background="#111827" CornerRadius="13" Padding="14" MinHeight="94">
                       <StackPanel Spacing="7">
                         <TextBlock Text="REDE"
                                    Foreground="#38BDF8"
@@ -279,7 +279,7 @@
                         <TextBlock x:Name="DashboardRedeValorText"
                                    Text="-- ms"
                                    Foreground="#F8FAFC"
-                                   FontSize="32"
+                                   FontSize="25"
                                    FontFamily="Consolas"
                                    FontWeight="Bold"/>
                         <TextBlock Text="Latência"
@@ -301,7 +301,7 @@
                           Padding="0"
                           Background="Transparent"
                           BorderThickness="0">
-                    <Border Background="#111827" CornerRadius="16" Padding="14" MinHeight="122">
+                    <Border Background="#111827" CornerRadius="13" Padding="14" MinHeight="94">
                       <StackPanel Spacing="7">
                         <TextBlock Text="GPU"
                                    Foreground="#FDE68A"
@@ -310,7 +310,7 @@
                         <TextBlock x:Name="DashboardGpuValorText"
                                    Text="-- °C"
                                    Foreground="#F8FAFC"
-                                   FontSize="32"
+                                   FontSize="25"
                                    FontFamily="Consolas"
                                    FontWeight="Bold"/>
                         <TextBlock Text="Temperatura"
@@ -332,7 +332,7 @@
                           Padding="0"
                           Background="Transparent"
                           BorderThickness="0">
-                    <Border Background="#111827" CornerRadius="16" Padding="14" MinHeight="122">
+                    <Border Background="#111827" CornerRadius="13" Padding="14" MinHeight="94">
                       <StackPanel Spacing="7">
                         <TextBlock Text="CPU"
                                    Foreground="#A7F3D0"
@@ -341,7 +341,7 @@
                         <TextBlock x:Name="DashboardCpuValorText"
                                    Text="-- %"
                                    Foreground="#F8FAFC"
-                                   FontSize="32"
+                                   FontSize="25"
                                    FontFamily="Consolas"
                                    FontWeight="Bold"/>
                         <TextBlock Text="Uso atual"
@@ -363,7 +363,7 @@
                           Padding="0"
                           Background="Transparent"
                           BorderThickness="0">
-                    <Border Background="#111827" CornerRadius="16" Padding="14" MinHeight="122">
+                    <Border Background="#111827" CornerRadius="13" Padding="14" MinHeight="94">
                       <StackPanel Spacing="7">
                         <TextBlock Text="RAM"
                                    Foreground="#FCA5A5"
@@ -372,7 +372,7 @@
                         <TextBlock x:Name="DashboardRamValorText"
                                    Text="-- %"
                                    Foreground="#F8FAFC"
-                                   FontSize="32"
+                                   FontSize="25"
                                    FontFamily="Consolas"
                                    FontWeight="Bold"/>
                         <TextBlock Text="Memória"
@@ -394,7 +394,7 @@
                           Padding="0"
                           Background="Transparent"
                           BorderThickness="0">
-                    <Border Background="#111827" CornerRadius="16" Padding="14" MinHeight="122">
+                    <Border Background="#111827" CornerRadius="13" Padding="14" MinHeight="94">
                       <StackPanel Spacing="7">
                         <TextBlock Text="WINDOWS"
                                    Foreground="#C4B5FD"
@@ -403,7 +403,7 @@
                         <TextBlock x:Name="DashboardWindowsValorText"
                                    Text="OK?"
                                    Foreground="#F8FAFC"
-                                   FontSize="32"
+                                   FontSize="25"
                                    FontFamily="Consolas"
                                    FontWeight="Bold"/>
                         <TextBlock Text="Integridade"
@@ -422,7 +422,7 @@
 
                 </Grid>
 
-                <Border Background="#07111F" CornerRadius="14" Padding="14">
+                <Border Background="#07111F" CornerRadius="12" Padding="14">
                   <Grid ColumnDefinitions="*,Auto">
                     <StackPanel Grid.Column="0" Spacing="4">
                       <TextBlock Text="Otimização recomendada"
@@ -438,37 +438,37 @@
                     <Button Grid.Column="1"
                             Content="Iniciar"
                             Click="OnPrepararClick"
-                            Height="42"
-                            Padding="22,0"
-                            FontSize="14"/>
+                            Height="34"
+                            Padding="14,0"
+                            FontSize="13"/>
                   </Grid>
                 </Border>
 
               </StackPanel>
             </Border>
             <TextBlock x:Name="StatusTitle"
-                       Text="Quartel de preparação"
+                       Text="Painel de verificação"
                        Foreground="#F9FAFB"
                        FontSize="24"
                        FontWeight="Bold"/>
             <TextBlock x:Name="ResumoText"
-                       Text="Escolha o tipo de exame e clique em Diagnosticar."
+                       Text="Escolha um exame e execute a verificação."
                        Foreground="#CBD5E1"
-                       FontSize="15"
+                       FontSize="13"
                        TextWrapping="Wrap"/>
           </StackPanel>
         </Border>
 
         <Grid ColumnDefinitions="390,*" ColumnSpacing="18">
 
-          <Border Background="#111827" CornerRadius="18" Padding="20">
-            <StackPanel Spacing="16">
+          <Border Background="#111827" CornerRadius="12" Padding="20">
+            <StackPanel Spacing="8">
               <TextBlock Text="Qualidade da rede"
                          Foreground="#F9FAFB"
                          FontSize="20"
                          FontWeight="Bold"/>
 
-              <Border Background="#0B1220" CornerRadius="18" Padding="22">
+              <Border Background="#0B1220" CornerRadius="12" Padding="22">
                 <StackPanel Spacing="12">
                   <TextBlock x:Name="GaugePingText"
                              Text="-- ms"
@@ -527,7 +527,7 @@
             </StackPanel>
           </Border>
 
-          <Border Grid.Column="1" Background="#111827" CornerRadius="18" Padding="20">
+          <Border Grid.Column="1" Background="#111827" CornerRadius="12" Padding="20">
             <StackPanel Spacing="12">
               <TextBlock Text="Painel ao vivo do teste"
                          Foreground="#F9FAFB"
@@ -535,19 +535,19 @@
                          FontWeight="Bold"/>
 
               <Grid ColumnDefinitions="*,*,*,*" ColumnSpacing="12">
-                <Border Background="#0B1220" CornerRadius="14" Padding="14">
+                <Border Background="#0B1220" CornerRadius="12" Padding="14">
                   <StackPanel Spacing="4">
                     <TextBlock Text="Alvo atual" Foreground="#94A3B8" FontSize="12"/>
                     <TextBlock x:Name="AlvoAtualText"
                                Text="Aguardando"
                                Foreground="#E5E7EB"
-                               FontSize="15"
+                               FontSize="13"
                                FontWeight="Bold"
                                TextWrapping="Wrap"/>
                   </StackPanel>
                 </Border>
 
-                <Border Grid.Column="1" Background="#0B1220" CornerRadius="14" Padding="14">
+                <Border Grid.Column="1" Background="#0B1220" CornerRadius="12" Padding="14">
                   <StackPanel Spacing="4">
                     <TextBlock Text="Pacote" Foreground="#94A3B8" FontSize="12"/>
                     <TextBlock x:Name="PacoteAtualText"
@@ -558,7 +558,7 @@
                   </StackPanel>
                 </Border>
 
-                <Border Grid.Column="2" Background="#0B1220" CornerRadius="14" Padding="14">
+                <Border Grid.Column="2" Background="#0B1220" CornerRadius="12" Padding="14">
                   <StackPanel Spacing="4">
                     <TextBlock Text="Ping atual" Foreground="#94A3B8" FontSize="12"/>
                     <TextBlock x:Name="PingAtualText"
@@ -569,13 +569,13 @@
                   </StackPanel>
                 </Border>
 
-                <Border Grid.Column="3" Background="#0B1220" CornerRadius="14" Padding="14">
+                <Border Grid.Column="3" Background="#0B1220" CornerRadius="12" Padding="14">
                   <StackPanel Spacing="4">
                     <TextBlock Text="Estado" Foreground="#94A3B8" FontSize="12"/>
                     <TextBlock x:Name="EstadoAtualText"
                                Text="Parado"
                                Foreground="#E5E7EB"
-                               FontSize="15"
+                               FontSize="13"
                                FontWeight="Bold"
                                TextWrapping="Wrap"/>
                   </StackPanel>
@@ -598,7 +598,7 @@
         </Grid>
 
         <Grid ColumnDefinitions="*,*" ColumnSpacing="18">
-          <Border Background="#111827" CornerRadius="18" Padding="20">
+          <Border Background="#111827" CornerRadius="12" Padding="20">
             <StackPanel Spacing="8">
               <TextBlock Text="Sistema"
                          Foreground="#F9FAFB"
@@ -611,7 +611,7 @@
             </StackPanel>
           </Border>
 
-          <Border Grid.Column="1" Background="#111827" CornerRadius="18" Padding="20">
+          <Border Grid.Column="1" Background="#111827" CornerRadius="12" Padding="20">
             <StackPanel Spacing="8">
               <TextBlock Text="Rede"
                          Foreground="#F9FAFB"
@@ -625,8 +625,8 @@
           </Border>
         </Grid>
 
-        <Border Background="#111827" CornerRadius="18" Padding="20">
-          <StackPanel Spacing="10">
+        <Border Background="#111827" CornerRadius="12" Padding="20">
+          <StackPanel Spacing="8">
             <TextBlock Text="Tracert"
                        Foreground="#F9FAFB"
                        FontSize="18"
@@ -642,16 +642,16 @@
           </StackPanel>
         </Border>
 
-        <Border Background="#111827" CornerRadius="18" Padding="20">
-          <StackPanel Spacing="10">
-                        <Border Background="#0B1220" CornerRadius="14" Padding="12" Margin="0,0,0,12">
+        <Border Background="#111827" CornerRadius="12" Padding="20">
+          <StackPanel Spacing="8">
+                        <Border Background="#0B1220" CornerRadius="12" Padding="12" Margin="0,0,0,12">
               <StackPanel Spacing="8">
-                <TextBlock Text="Apps seguros encontrados"
+                <TextBlock Text="Processos analisados"
                            Foreground="#F9FAFB"
                            FontWeight="Bold"/>
 
                 <TextBlock x:Name="AppsSelecionaveisAvisoText"
-                           Text="Clique em Listar Apps Seguros para carregar os candidatos."
+                           Text="Clique em Analisar Processos para carregar os candidatos."
                            Foreground="#94A3B8"
                            TextWrapping="Wrap"
                            FontSize="12"/>
@@ -660,7 +660,7 @@
                             Spacing="6"/>
               </StackPanel>
             </Border>
-                        <Border Background="#0B1220" CornerRadius="14" Padding="12" Margin="0,0,0,12">
+                        <Border Background="#0B1220" CornerRadius="12" Padding="12" Margin="0,0,0,12">
               <StackPanel Spacing="8">
                 <TextBlock Text="Classificação visual dos processos"
                            Foreground="#F9FAFB"
@@ -686,7 +686,7 @@
                      AcceptsReturn="True"
                      IsReadOnly="True"
                      TextWrapping="Wrap"
-                     MinHeight="300"
+                     MinHeight="180"
                      Background="#0B1220"
                      Foreground="#E5E7EB"/>
           </StackPanel>
@@ -697,6 +697,8 @@
 
   </Grid>
 </Window>
+
+
 
 
 

@@ -16,7 +16,7 @@ namespace PerformanceCenter;
 
 public partial class MainWindow : Window
 {
-    private string _ultimoRelatorio = "Exillados WarPrep v3.2 pronto. Nenhum diagnóstico executado ainda.";
+    private string _ultimoRelatorio = "Performance Center v3.4.4 pronto. Nenhum diagnóstico executado ainda.";
     private bool _repararWindowsConfirmacaoPendente = false;
     private bool _limpezaConfirmacaoPendente = false;
     private bool _fecharSelecionadosConfirmacaoPendente = false;
@@ -44,7 +44,7 @@ public partial class MainWindow : Window
         if (!OperatingSystem.IsWindows())
         {
             _ultimoRelatorio =
-                "===== EXILLADOS WARPREP v3.2 =====\n\n" +
+                "===== Performance Center v3.4.4 =====\n\n" +
                 "TRIAGEM DE PROCESSOS SUSPEITOS:\n\n" +
                 "Esta função só está disponível no Windows.\n" +
                 "Nenhuma alteração foi aplicada.\n";
@@ -75,7 +75,7 @@ $trustedNoise = @(
   'msedge',
   'devenv',
   'dotnet',
-  'exilladoswarprep',
+  'Performance CenterPerformance Center',
   'steam',
   'nvidia',
   'amd',
@@ -171,12 +171,12 @@ else {
 
         var sb = new StringBuilder();
 
-        sb.AppendLine("===== EXILLADOS WARPREP v3.2 =====");
+        sb.AppendLine("===== Performance Center v3.4.4 =====");
         sb.AppendLine();
         sb.AppendLine("🕵️ TRIAGEM DE PROCESSOS SUSPEITOS");
         sb.AppendLine();
         sb.AppendLine("IMPORTANTE:");
-        sb.AppendLine("- O WarPrep NÃO é antivírus.");
+        sb.AppendLine("- O Performance Center NÃO é antivírus.");
         sb.AppendLine("- Esta triagem apenas aponta sinais suspeitos simples.");
         sb.AppendLine("- Nada foi removido, fechado ou alterado.");
         sb.AppendLine("- Para ameaça real, use antivírus confiável e análise manual.");
@@ -261,7 +261,7 @@ else {
 
         var sb = new StringBuilder();
 
-        sb.AppendLine("===== EXILLADOS WARPREP v3.2 =====");
+        sb.AppendLine("===== Performance Center v3.4.4 =====");
         sb.AppendLine();
         sb.AppendLine("🖥️ DIAGNÓSTICO GAMER DO PC");
         sb.AppendLine();
@@ -458,10 +458,10 @@ else {
         AtualizarMedidor(pingCloudflare.MediaMs is null ? null : (long)Math.Round(pingCloudflare.MediaMs.Value), "Exame concluído");
 
         _ultimoRelatorio =
-            "===== EXILLADOS WARPREP v3.2 =====\n" +
+            "===== Performance Center v3.4.4 =====\n" +
             $"Data: {DateTime.Now:dd/MM/yyyy HH:mm:ss}\n\n" +
             "OBJETIVO:\n" +
-            "Ferramenta gratuita e open-source para ajudar players a prepararem o PC antes da Node War.\n" +
+            "Ferramenta gratuita e open-source para ajudar players a prepararem o PC antes de uso intensivo War.\n" +
             "Não mexe no Black Desert Online, não é cheat e não coleta dados pessoais.\n\n" +
             "MODO DO EXAME:\n" +
             $"{modo.Nome} | Pacotes por alvo: {modo.Pacotes} | Tracert saltos: {modo.TracertSaltos}\n\n" +
@@ -484,7 +484,7 @@ else {
             $"{tracertCloudflare}\n\n" +
             "RECOMENDAÇÃO:\n" +
             "Se houver perda de pacote, ping muito alto ou falhas no teste, reinicie modem/roteador e teste novamente.\n" +
-            "Antes da guerra, feche navegador pesado, launchers desnecessários e programas de atualização.\n" +
+            "Antes da uso intensivo, feche navegador pesado, launchers desnecessários e programas de atualização.\n" +
             "O programa não recomenda fechar BlackDesert64, Discord, antivírus, drivers ou serviços essenciais.\n";
 
         RelatorioBox.Text = _ultimoRelatorio;
@@ -596,7 +596,7 @@ else {
         {
             1 => new ModoTeste("Médio — recomendado", 20, 15),
             2 => new ModoTeste("Longo — diagnóstico detalhado", 60, 30),
-            _ => new ModoTeste("Curto — rápido antes da Node", 5, 8)
+            _ => new ModoTeste("Curto — rápido antes de uso intensivo", 5, 8)
         };
     }
 
@@ -669,7 +669,7 @@ else {
             problemas.Add("⚠️ Perda de pacote detectada fora da rede local. Pode ser rota, operadora ou instabilidade momentânea.");
 
         if ((cloudflare.MaximoMs ?? 0) >= 120 || (google.MaximoMs ?? 0) >= 120)
-            problemas.Add("⚠️ Pico de ping alto detectado. Isso pode causar travadas/teleporte/atraso em guerra.");
+            problemas.Add("⚠️ Pico de ping alto detectado. Isso pode causar travadas/teleporte/atraso em uso intensivo.");
 
         if ((cloudflare.MediaMs ?? 0) >= 100 || (google.MediaMs ?? 0) >= 100)
             problemas.Add("⚠️ Média de ping alta para os alvos testados.");
@@ -729,10 +729,10 @@ else {
             return $"- {processo.Nome}: {processo.MemoriaMb} MB | Comunicação da guild — não fechar automaticamente.";
 
         if (EhNavegadorChecklist(processo.Nome))
-            return $"- {processo.Nome}: {processo.MemoriaMb} MB | Navegador pesado — pode fechar antes da guerra se não precisar.";
+            return $"- {processo.Nome}: {processo.MemoriaMb} MB | Navegador pesado — pode fechar antes da uso intensivo se não precisar.";
 
         if (EhAppQuePodeAtrapalharChecklist(processo.Nome))
-            return $"- {processo.Nome}: {processo.MemoriaMb} MB | Pode atrapalhar — avaliar fechar antes da guerra.";
+            return $"- {processo.Nome}: {processo.MemoriaMb} MB | Pode atrapalhar — avaliar fechar antes da uso intensivo.";
 
         return $"- {processo.Nome}: {processo.MemoriaMb} MB";
     }
@@ -810,7 +810,7 @@ else {
                n.Contains("searchindexer") ||
                n.Contains("searchfilterhost") ||
                n.Contains("searchprotocolhost") ||
-               n.Contains("exilladoswarprep") ||
+               n.Contains("Performance CenterPerformance Center") ||
                n.Contains("dotnet") ||
                n.Contains("vbcscompiler") ||
                n.Contains("devenv") ||
@@ -848,7 +848,7 @@ else {
         string n = nome.ToLowerInvariant();
 
         if (EhBlackDesert(nome))
-            return "jogo detectado, nunca fechar pelo WarPrep";
+            return "jogo detectado, nunca fechar pelo Performance Center";
 
         if (EhDiscord(nome))
             return "comunicação da guild, não fechar automaticamente";
@@ -868,7 +868,7 @@ else {
         if (n.Contains("searchhost") || n.Contains("searchindexer") || n.Contains("searchfilterhost") || n.Contains("searchprotocolhost"))
             return "serviço de busca/indexação do Windows, não fechar automaticamente";
 
-        if (n.Contains("exilladoswarprep") || n.Contains("dotnet") || n.Contains("vbcscompiler") || n.Contains("devenv") || n.Contains("devhub"))
+        if (n.Contains("Performance CenterPerformance Center") || n.Contains("dotnet") || n.Contains("vbcscompiler") || n.Contains("devenv") || n.Contains("devhub"))
             return "ferramenta do próprio app/desenvolvimento, não fechar automaticamente";
 
         if (n.Contains("coherentui_host"))
@@ -1023,6 +1023,7 @@ else {
         }
     }
 }
+
 
 
 

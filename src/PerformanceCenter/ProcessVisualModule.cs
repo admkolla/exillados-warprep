@@ -50,7 +50,7 @@ public partial class MainWindow
                 return;
             }
 
-            ProcessosVisuaisAvisoText.Text = "Legenda: verde = não fechar, amarelo = verificar se precisa, vermelho = recomendado fechar antes da guerra.";
+            ProcessosVisuaisAvisoText.Text = "Legenda: verde = não fechar, amarelo = verificar se precisa, vermelho = recomendado fechar antes da uso intensivo.";
 
             AdicionarGrupoProcessosVisual(
                 "🟢 NÃO FECHAR",
@@ -72,7 +72,7 @@ public partial class MainWindow
 
             AdicionarGrupoProcessosVisual(
                 "🔴 RECOMENDADO FECHAR",
-                "Candidatos fortes para fechar antes da Node se não forem necessários.",
+                "Candidatos fortes para fechar antes de uso intensivo se não forem necessários.",
                 recomendados,
                 "#3F1111",
                 "#FCA5A5",
@@ -164,7 +164,7 @@ public partial class MainWindow
         string n = p.Nome.ToLowerInvariant();
 
         if (n.Contains("blackdesert"))
-            return "jogo detectado, nunca fechar pelo WarPrep";
+            return "jogo detectado, nunca fechar pelo Performance Center";
 
         if (n.Contains("discord"))
             return "comunicação da guild, não fechar automaticamente";
@@ -178,7 +178,7 @@ public partial class MainWindow
         if (n.Contains("nvidia") || n.Contains("nvcontainer") || n.Contains("amd") || n.Contains("radeon"))
             return "driver/placa de vídeo";
 
-        if (n.Contains("devenv") || n.Contains("dotnet") || n.Contains("vbcscompiler") || n.Contains("exilladoswarprep"))
+        if (n.Contains("devenv") || n.Contains("dotnet") || n.Contains("vbcscompiler") || n.Contains("Performance CenterPerformance Center"))
             return "ferramenta do próprio app/desenvolvimento";
 
         return "processo protegido/sensível";
@@ -197,6 +197,7 @@ public partial class MainWindow
         return MotivoPodeFechar(p.Nome);
     }
 }
+
 
 
 

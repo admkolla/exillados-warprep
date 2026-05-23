@@ -1,4 +1,5 @@
 ﻿using Avalonia.Interactivity;
+using Avalonia.Media;
 using System;
 using System.Linq;
 using System.Net.NetworkInformation;
@@ -17,32 +18,22 @@ public partial class MainWindow
     {
         try
         {
-            DashboardRedeValorText.Text = "...";
-            DashboardRedeStatusText.Text = "medindo";
-
-            DashboardGpuValorText.Text = "...";
-            DashboardGpuStatusText.Text = "lendo";
-
-            DashboardCpuValorText.Text = "...";
-            DashboardCpuStatusText.Text = "lendo";
-
-            DashboardRamValorText.Text = "...";
-            DashboardRamStatusText.Text = "lendo";
-
-            DashboardWindowsValorText.Text = "OK?";
-            DashboardWindowsStatusText.Text = "clique para verificar";
+            SetDashboardInfo(DashboardRedeValorText, DashboardRedeStatusText, "...", "medindo");
+            SetDashboardInfo(DashboardGpuValorText, DashboardGpuStatusText, "...", "lendo");
+            SetDashboardInfo(DashboardCpuValorText, DashboardCpuStatusText, "...", "lendo");
+            SetDashboardInfo(DashboardRamValorText, DashboardRamStatusText, "...", "lendo");
+            SetDashboardInfo(DashboardWindowsValorText, DashboardWindowsStatusText, "OK?", "clique para verificar");
 
             long? pingMs = await MedirPingDashboardAsync();
 
             if (pingMs is null)
             {
-                DashboardRedeValorText.Text = "-- ms";
-                DashboardRedeStatusText.Text = "sem resposta";
+                SetDashboardAlert(DashboardRedeValorText, DashboardRedeStatusText, "-- ms", "sem resposta");
             }
             else
             {
-                DashboardRedeValorText.Text = $"{pingMs.Value} ms";
-                DashboardRedeStatusText.Text = ClassificarPingDashboard(pingMs.Value);
+                string statusPing = ClassificarPingDashboard(pingMs.Value);
+                AplicarStatusDashboard(DashboardRedeValorText, DashboardRedeStatusText, $"{pingMs.Value} ms", statusPing);
             }
 
             var leituras = ColetarSensoresHardware();
@@ -73,45 +64,75 @@ public partial class MainWindow
                 .FirstOrDefault();
 
             if (gpuTemp is not null)
-            {
-                DashboardGpuValorText.Text = $"{gpuTemp.Valor:0} °C";
-                DashboardGpuStatusText.Text = ClassificarTemperaturaDashboard(gpuTemp.Valor);
-            }
+                AplicarStatusDashboard(DashboardGpuValorText, DashboardGpuStatusText, $"{gpuTemp.Valor:0} °C", ClassificarTemperaturaDashboard(gpuTemp.Valor));
             else
-            {
-                DashboardGpuValorText.Text = "-- °C";
-                DashboardGpuStatusText.Text = "não exposto";
-            }
+                SetDashboardInfo(DashboardGpuValorText, DashboardGpuStatusText, "-- °C", "não exposto");
 
             if (cpuLoad is not null)
-            {
-                DashboardCpuValorText.Text = $"{cpuLoad.Valor:0}%";
-                DashboardCpuStatusText.Text = ClassificarUsoDashboard(cpuLoad.Valor);
-            }
+                AplicarStatusDashboard(DashboardCpuValorText, DashboardCpuStatusText, $"{cpuLoad.Valor:0}%", ClassificarUsoDashboard(cpuLoad.Valor));
             else
-            {
-                DashboardCpuValorText.Text = "-- %";
-                DashboardCpuStatusText.Text = "não exposto";
-            }
+                SetDashboardInfo(DashboardCpuValorText, DashboardCpuStatusText, "-- %", "não exposto");
 
             if (ramLoad is not null)
-            {
-                DashboardRamValorText.Text = $"{ramLoad.Valor:0}%";
-                DashboardRamStatusText.Text = ClassificarRamDashboard(ramLoad.Valor);
-            }
+                AplicarStatusDashboard(DashboardRamValorText, DashboardRamStatusText, $"{ramLoad.Valor:0}%", ClassificarRamDashboard(ramLoad.Valor));
             else
-            {
-                DashboardRamValorText.Text = "-- %";
-                DashboardRamStatusText.Text = "não exposto";
-            }
+                SetDashboardInfo(DashboardRamValorText, DashboardRamStatusText, "-- %", "não exposto");
+
+            SetDashboardInfo(DashboardWindowsValorText, DashboardWindowsStatusText, "OK?", "verificar manualmente");
         }
         catch
         {
-            DashboardRedeStatusText.Text = "erro";
-            DashboardGpuStatusText.Text = "erro";
-            DashboardCpuStatusText.Text = "erro";
-            DashboardRamStatusText.Text = "erro";
+            SetDashboardAlert(DashboardRedeValorText, DashboardRedeStatusText, "--", "erro");
+            SetDashboardAlert(DashboardGpuValorText, DashboardGpuStatusText, "--", "erro");
+            SetDashboardAlert(DashboardCpuValorText, DashboardCpuStatusText, "--", "erro");
+            SetDashboardAlert(DashboardRamValorText, DashboardRamStatusText, "--", "erro");
         }
+    }
+
+    private static void AplicarStatusDashboard(Avalonia.Controls.TextBlock valor, Avalonia.Controls.TextBlock status, string valorTexto, string statusTexto)
+    {
+        string s = statusTexto.ToLowerInvariant();
+
+        if (s.Contains("excelente") || s == "bom" || s == "ok")
+            SetDashboardOk(valor, status, valorTexto, statusTexto);
+        else if (s.Contains("atenção") || s.Contains("alta"))
+            SetDashboardWarning(valor, status, valorTexto, statusTexto);
+        else if (s.Contains("alto") || s.Contains("crítica") || s.Contains("erro") || s.Contains("sem resposta"))
+            SetDashboardAlert(valor, status, valorTexto, statusTexto);
+        else
+            SetDashboardInfo(valor, status, valorTexto, statusTexto);
+    }
+
+    private static void SetDashboardOk(Avalonia.Controls.TextBlock valor, Avalonia.Controls.TextBlock status, string valorTexto, string statusTexto)
+    {
+        valor.Text = valorTexto;
+        status.Text = statusTexto;
+        valor.Foreground = Brush.Parse("#86EFAC");
+        status.Foreground = Brush.Parse("#86EFAC");
+    }
+
+    private static void SetDashboardWarning(Avalonia.Controls.TextBlock valor, Avalonia.Controls.TextBlock status, string valorTexto, string statusTexto)
+    {
+        valor.Text = valorTexto;
+        status.Text = statusTexto;
+        valor.Foreground = Brush.Parse("#FDE68A");
+        status.Foreground = Brush.Parse("#FDE68A");
+    }
+
+    private static void SetDashboardAlert(Avalonia.Controls.TextBlock valor, Avalonia.Controls.TextBlock status, string valorTexto, string statusTexto)
+    {
+        valor.Text = valorTexto;
+        status.Text = statusTexto;
+        valor.Foreground = Brush.Parse("#FCA5A5");
+        status.Foreground = Brush.Parse("#FCA5A5");
+    }
+
+    private static void SetDashboardInfo(Avalonia.Controls.TextBlock valor, Avalonia.Controls.TextBlock status, string valorTexto, string statusTexto)
+    {
+        valor.Text = valorTexto;
+        status.Text = statusTexto;
+        valor.Foreground = Brush.Parse("#F8FAFC");
+        status.Foreground = Brush.Parse("#94A3B8");
     }
 
     private static async Task<long?> MedirPingDashboardAsync()
@@ -169,3 +190,4 @@ public partial class MainWindow
         return "crítica";
     }
 }
+

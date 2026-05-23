@@ -17,7 +17,7 @@ public partial class MainWindow
             ResumoText.Text = "Esta função só está disponível no Windows.";
 
             _ultimoRelatorio =
-                "===== EXILLADOS WARPREP v3.2 =====\n\n" +
+                "===== Performance Center v3.4.4 =====\n\n" +
                 "MODO JOGO:\n\n" +
                 "Esta função só está disponível no Windows.\n" +
                 "Nenhuma alteração foi aplicada.\n";
@@ -38,7 +38,7 @@ public partial class MainWindow
             ResumoText.Text = "Nenhuma alteração foi necessária.";
 
             _ultimoRelatorio =
-                "===== EXILLADOS WARPREP v3.2 =====\n\n" +
+                "===== Performance Center v3.4.4 =====\n\n" +
                 "MODO JOGO:\n\n" +
                 "✅ O Modo Jogo do Windows já está ativado.\n" +
                 "Nenhuma alteração foi aplicada.\n";
@@ -56,12 +56,12 @@ public partial class MainWindow
             ResumoText.Text = "Clique novamente em Ativar Modo Jogo para aplicar. O valor atual será salvo para restauração.";
 
             _ultimoRelatorio =
-                "===== EXILLADOS WARPREP v3.2 =====\n\n" +
+                "===== Performance Center v3.4.4 =====\n\n" +
                 "CONFIRMAÇÃO — ATIVAR MODO JOGO:\n\n" +
                 "NADA FOI ALTERADO AINDA.\n\n" +
                 $"Estado atual detectado: {estadoAtual}\n" +
                 $"Valor atual do registro: {(valorAtual ?? "não existente")}\n\n" +
-                "Se confirmar, o WarPrep vai:\n" +
+                "Se confirmar, o Performance Center vai:\n" +
                 "- Salvar o valor atual para restauração.\n" +
                 "- Ativar AutoGameModeEnabled no usuário atual do Windows.\n\n" +
                 "Para confirmar, clique novamente em:\n" +
@@ -82,10 +82,10 @@ public partial class MainWindow
         string depois = LerModoJogo();
 
         StatusTitle.Text = "Modo Jogo aplicado";
-        ResumoText.Text = "O WarPrep tentou ativar o Modo Jogo. Use Restaurar Configurações para voltar ao valor anterior salvo.";
+        ResumoText.Text = "O Performance Center tentou ativar o Modo Jogo. Use Restaurar Configurações para voltar ao valor anterior salvo.";
 
         _ultimoRelatorio =
-            "===== EXILLADOS WARPREP v3.2 =====\n\n" +
+            "===== Performance Center v3.4.4 =====\n\n" +
             "RESULTADO — ATIVAR MODO JOGO:\n\n" +
             $"Valor anterior salvo: {(valorAtual ?? "não existente")}\n\n" +
             $"Resultado: {resultado}\n" +
@@ -109,10 +109,10 @@ public partial class MainWindow
         if (string.IsNullOrWhiteSpace(guidAtual))
         {
             StatusTitle.Text = "Não foi possível identificar o plano atual";
-            ResumoText.Text = "O WarPrep não aplicou nenhuma alteração.";
+            ResumoText.Text = "O Performance Center não aplicou nenhuma alteração.";
 
             _ultimoRelatorio =
-                "===== EXILLADOS WARPREP v3.2 =====\n\n" +
+                "===== Performance Center v3.4.4 =====\n\n" +
                 "ENERGIA ALTO DESEMPENHO:\n\n" +
                 "Não foi possível identificar o plano de energia atual.\n" +
                 "Nenhuma alteração foi aplicada.\n\n" +
@@ -133,7 +133,7 @@ public partial class MainWindow
             ResumoText.Text = "Nenhuma alteração foi necessária.";
 
             _ultimoRelatorio =
-                "===== EXILLADOS WARPREP v3.2 =====\n\n" +
+                "===== Performance Center v3.4.4 =====\n\n" +
                 "ENERGIA ALTO DESEMPENHO:\n\n" +
                 "✅ O plano de energia atual já parece estar em Alto Desempenho.\n" +
                 "Nenhuma alteração foi aplicada.\n\n" +
@@ -152,12 +152,12 @@ public partial class MainWindow
             ResumoText.Text = "Clique novamente em Energia Alto Desempenho para aplicar. O plano atual será salvo para restauração.";
 
             _ultimoRelatorio =
-                "===== EXILLADOS WARPREP v3.2 =====\n\n" +
+                "===== Performance Center v3.4.4 =====\n\n" +
                 "CONFIRMAÇÃO — ENERGIA ALTO DESEMPENHO:\n\n" +
                 "NADA FOI ALTERADO AINDA.\n\n" +
                 "Plano atual detectado:\n" +
                 $"{planoAtualTexto}\n\n" +
-                "Se confirmar, o WarPrep vai:\n" +
+                "Se confirmar, o Performance Center vai:\n" +
                 "- Salvar o plano atual para restauração.\n" +
                 "- Tentar aplicar o plano Alto Desempenho do Windows.\n\n" +
                 "Para confirmar, clique novamente em:\n" +
@@ -178,10 +178,10 @@ public partial class MainWindow
         string depois = await RunCommandAsync("powercfg", "/getactivescheme");
 
         StatusTitle.Text = "Energia aplicada";
-        ResumoText.Text = "O WarPrep tentou aplicar Alto Desempenho. Use Restaurar Configurações para voltar ao plano anterior salvo.";
+        ResumoText.Text = "O Performance Center tentou aplicar Alto Desempenho. Use Restaurar Configurações para voltar ao plano anterior salvo.";
 
         _ultimoRelatorio =
-            "===== EXILLADOS WARPREP v3.2 =====\n\n" +
+            "===== Performance Center v3.4.4 =====\n\n" +
             "RESULTADO — ENERGIA ALTO DESEMPENHO:\n\n" +
             $"Plano anterior salvo: {guidAtual}\n\n" +
             "Resultado do comando:\n" +
@@ -213,7 +213,7 @@ public partial class MainWindow
             ResumoText.Text = "Nenhuma configuração anterior foi encontrada no backup local.";
 
             _ultimoRelatorio =
-                "===== EXILLADOS WARPREP v3.2 =====\n\n" +
+                "===== Performance Center v3.4.4 =====\n\n" +
                 "RESTAURAR CONFIGURAÇÕES:\n\n" +
                 "Nenhum backup local de energia ou Modo Jogo foi encontrado.\n" +
                 "Nenhuma alteração foi aplicada.\n";
@@ -232,7 +232,7 @@ public partial class MainWindow
 
             var sb = new StringBuilder();
 
-            sb.AppendLine("===== EXILLADOS WARPREP v3.2 =====");
+            sb.AppendLine("===== Performance Center v3.4.4 =====");
             sb.AppendLine();
             sb.AppendLine("CONFIRMAÇÃO — RESTAURAR CONFIGURAÇÕES:");
             sb.AppendLine();
@@ -259,7 +259,7 @@ public partial class MainWindow
 
         var resultado = new StringBuilder();
 
-        resultado.AppendLine("===== EXILLADOS WARPREP v3.2 =====");
+        resultado.AppendLine("===== Performance Center v3.4.4 =====");
         resultado.AppendLine();
         resultado.AppendLine("RESULTADO — RESTAURAR CONFIGURAÇÕES:");
         resultado.AppendLine();
@@ -297,7 +297,7 @@ public partial class MainWindow
         resultado.AppendLine("- Backups locais usados foram removidos após restauração.");
 
         StatusTitle.Text = "Configurações restauradas";
-        ResumoText.Text = "O WarPrep tentou restaurar as configurações salvas.";
+        ResumoText.Text = "O Performance Center tentou restaurar as configurações salvas.";
 
         _ultimoRelatorio = resultado.ToString();
         RelatorioBox.Text = _ultimoRelatorio;
@@ -318,7 +318,7 @@ public partial class MainWindow
     {
         string pasta = System.IO.Path.Combine(
             Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
-            "ExilladosWarPrep"
+            "Performance CenterPerformance Center"
         );
 
         System.IO.Directory.CreateDirectory(pasta);
@@ -454,6 +454,7 @@ public partial class MainWindow
         }
     }
 }
+
 
 
 

@@ -15,7 +15,7 @@ public partial class MainWindow
             ResumoText.Text = "Esta função só está disponível no Windows.";
 
             _ultimoRelatorio =
-                "===== EXILLADOS WARPREP v3.2 =====\n\n" +
+                "===== Performance Center v3.4.4 =====\n\n" +
                 "REPARAR WINDOWS:\n\n" +
                 "Esta função só está disponível no Windows.\n" +
                 "Nenhuma alteração foi aplicada.\n";
@@ -32,15 +32,15 @@ public partial class MainWindow
             _repararWindowsConfirmacaoPendente = false;
 
             StatusTitle.Text = "Administrador necessário";
-            ResumoText.Text = "Para reparar o Windows, feche o WarPrep e abra como Administrador.";
+            ResumoText.Text = "Para reparar o Windows, feche o Performance Center e abra como Administrador.";
 
             _ultimoRelatorio =
-                "===== EXILLADOS WARPREP v3.2 =====\n\n" +
+                "===== Performance Center v3.4.4 =====\n\n" +
                 "REPARAR WINDOWS:\n\n" +
-                "⚠️ O WarPrep não está executando como Administrador.\n\n" +
+                "⚠️ O Performance Center não está executando como Administrador.\n\n" +
                 "Para usar o reparo:\n" +
-                "1. Feche o WarPrep.\n" +
-                "2. Clique com botão direito no ExilladosWarPrep.exe.\n" +
+                "1. Feche o Performance Center.\n" +
+                "2. Clique com botão direito no Performance CenterPerformance Center.exe.\n" +
                 "3. Escolha 'Executar como administrador'.\n" +
                 "4. Clique novamente em 🔧 Reparar Windows.\n\n" +
                 "Nenhuma alteração foi aplicada.\n";
@@ -58,17 +58,17 @@ public partial class MainWindow
             ResumoText.Text = "Clique novamente em Reparar Windows para iniciar DISM RestoreHealth e SFC Scannow.";
 
             _ultimoRelatorio =
-                "===== EXILLADOS WARPREP v3.2 =====\n\n" +
+                "===== Performance Center v3.4.4 =====\n\n" +
                 "CONFIRMAÇÃO — REPARAR WINDOWS:\n\n" +
                 "NADA FOI REPARADO AINDA.\n\n" +
                 "O diagnóstico anterior indicou que o repositório de componentes do Windows é reparável.\n\n" +
-                "Se confirmar, o WarPrep vai executar:\n" +
+                "Se confirmar, o Performance Center vai executar:\n" +
                 "1. DISM /Online /Cleanup-Image /RestoreHealth\n" +
                 "2. sfc /scannow\n\n" +
                 "AVISOS:\n" +
                 "- Pode demorar vários minutos.\n" +
                 "- Pode usar CPU/disco/rede.\n" +
-                "- Não faça perto da Node War.\n" +
+                "- Não faça perto da uso intensivo.\n" +
                 "- O programa não reinicia o PC sozinho.\n" +
                 "- Depois do reparo, o Windows pode recomendar reiniciar.\n\n" +
                 "Para confirmar, clique novamente em:\n" +
@@ -83,7 +83,7 @@ public partial class MainWindow
 
         var sb = new StringBuilder();
 
-        sb.AppendLine("===== EXILLADOS WARPREP v3.2 =====");
+        sb.AppendLine("===== Performance Center v3.4.4 =====");
         sb.AppendLine();
         sb.AppendLine("🔧 REPARO DO WINDOWS — DISM / SFC");
         sb.AppendLine();
@@ -197,7 +197,7 @@ public partial class MainWindow
         if (!OperatingSystem.IsWindows())
         {
             _ultimoRelatorio =
-                "===== EXILLADOS WARPREP v3.2 =====\n\n" +
+                "===== Performance Center v3.4.4 =====\n\n" +
                 "VERIFICAÇÃO DO WINDOWS:\n\n" +
                 "Esta função só está disponível no Windows.\n" +
                 "Nenhuma alteração foi aplicada.\n";
@@ -213,7 +213,7 @@ public partial class MainWindow
 
         var sb = new StringBuilder();
 
-        sb.AppendLine("===== EXILLADOS WARPREP v3.2 =====");
+        sb.AppendLine("===== Performance Center v3.4.4 =====");
         sb.AppendLine();
         sb.AppendLine("🩺 VERIFICAÇÃO DO WINDOWS — SFC / DISM");
         sb.AppendLine();
@@ -267,7 +267,7 @@ public partial class MainWindow
         sb.AppendLine(conclusao);
         sb.AppendLine();
         sb.AppendLine("PRÓXIMO PASSO FUTURO:");
-        sb.AppendLine("- v3.2 poderá adicionar reparo com confirmação:");
+        sb.AppendLine("- v3.4.4 poderá adicionar reparo com confirmação:");
         sb.AppendLine("  DISM /RestoreHealth");
         sb.AppendLine("  sfc /scannow");
         sb.AppendLine("- Reparo só deve rodar como administrador e com confirmação.");
@@ -304,7 +304,7 @@ public partial class MainWindow
 
         if (!admin && (texto.Contains("administrador") || texto.Contains("administrator") || texto.Contains("elevated") || texto.Contains("740")))
         {
-            return "⚠️ A verificação parece ter falhado por falta de permissão. Abra o WarPrep como Administrador e rode novamente.";
+            return "⚠️ A verificação parece ter falhado por falta de permissão. Abra o Performance Center como Administrador e rode novamente.";
         }
 
         bool achouCorrupcao =
@@ -330,6 +330,7 @@ public partial class MainWindow
         return "ℹ️ Verificação concluída. Leia a saída acima para confirmar se o Windows pediu reparo ou permissões.";
     }
 }
+
 
 
 
