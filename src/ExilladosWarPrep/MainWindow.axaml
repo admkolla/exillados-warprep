@@ -2,13 +2,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         x:Class="ExilladosWarPrep.MainWindow"
         Title="Exillados WarPrep"
-        Width="1180"
-        Height="760"
-        MinWidth="1040"
-        MinHeight="680"
+        Width="1260"
+        Height="840"
+        MinWidth="1120"
+        MinHeight="760"
         Background="#0B0F14">
 
-  <Grid RowDefinitions="Auto,*" ColumnDefinitions="310,*">
+  <Grid RowDefinitions="Auto,*" ColumnDefinitions="315,*">
 
     <Border Grid.Row="0" Grid.ColumnSpan="2" Background="#101722" Padding="22,16">
       <Grid ColumnDefinitions="*,Auto">
@@ -29,7 +29,7 @@
                 CornerRadius="14"
                 Padding="14,8"
                 VerticalAlignment="Center">
-          <TextBlock Text="v0.2 • Rede e diagnóstico"
+          <TextBlock Text="v2.5.1 • Sensores corrigidos"
                      Foreground="#FCA5A5"
                      FontWeight="Bold"/>
         </Border>
@@ -71,6 +71,31 @@
             </StackPanel>
           </Border>
 
+          <Button Content="🖥️ Diagnóstico Gamer"
+                  Click="OnDiagnosticoGamerClick"
+                  Height="46"
+                  FontSize="15"/>
+
+          <Button Content="🌡️ Temperaturas"
+                  Click="OnTemperaturasClick"
+                  Height="46"
+                  FontSize="15"/>
+
+          <Button Content="🕵️ Processos Suspeitos"
+                  Click="OnProcessosSuspeitosClick"
+                  Height="46"
+                  FontSize="15"/>
+
+          <Button Content="🩺 Verificar Windows"
+                  Click="OnVerificarWindowsClick"
+                  Height="46"
+                  FontSize="15"/>
+
+          <Button Content="🔧 Reparar Windows"
+                  Click="OnRepararWindowsClick"
+                  Height="46"
+                  FontSize="15"/>
+
           <Button Content="🔎 Diagnosticar PC e Rede"
                   Click="OnDiagnosticarClick"
                   Height="46"
@@ -78,6 +103,30 @@
 
           <Button Content="⚔️ Preparar para Guerra"
                   Click="OnPrepararClick"
+                  Height="46"
+                  FontSize="15"/>
+
+          <Button Content="🧹 Limpar Temporários Seguros"
+                  Click="OnLimparTempClick"
+                  Height="46"
+                  FontSize="15"/>
+
+          <Button Content="📋 Listar Apps Seguros"
+                  Click="OnFecharAppsClick"
+                  Height="46"
+                  FontSize="15"/>
+
+          <Button Content="✅ Fechar Apps Marcados"
+                  Click="OnFecharSelecionadosClick"
+                  Height="46"
+                  FontSize="15"/>
+
+          <Button Content="🎮 Ativar Modo Jogo"
+                  Click="OnModoJogoClick"
+                  Height="46"
+                  FontSize="15"/>
+          <Button Content="⚡ Energia Alto Desempenho"
+                  Click="OnEnergiaClick"
                   Height="46"
                   FontSize="15"/>
 
@@ -91,21 +140,26 @@
                   Height="46"
                   FontSize="15"/>
 
+          <Button Content="💾 Salvar Relatório"
+                  Click="OnSalvarRelatorioClick"
+                  Height="46"
+                  FontSize="15"/>
+
+          <Button Content="📁 Abrir Relatórios"
+                  Click="OnAbrirRelatoriosClick"
+                  Height="46"
+                  FontSize="15"/>
+
           <Border Background="#172033" CornerRadius="14" Padding="14" Margin="0,10,0,0">
             <StackPanel Spacing="7">
               <TextBlock Text="Princípios do projeto"
                          Foreground="#F9FAFB"
                          FontWeight="Bold"/>
-              <TextBlock Text="✅ Gratuito"
-                         Foreground="#CBD5E1"/>
-              <TextBlock Text="✅ Open-source"
-                         Foreground="#CBD5E1"/>
-              <TextBlock Text="✅ Seguro"
-                         Foreground="#CBD5E1"/>
-              <TextBlock Text="✅ Reversível"
-                         Foreground="#CBD5E1"/>
-              <TextBlock Text="✅ Sem falcatrua"
-                         Foreground="#CBD5E1"/>
+              <TextBlock Text="✅ Gratuito" Foreground="#CBD5E1"/>
+              <TextBlock Text="✅ Open-source" Foreground="#CBD5E1"/>
+              <TextBlock Text="✅ Seguro" Foreground="#CBD5E1"/>
+              <TextBlock Text="✅ Reversível" Foreground="#CBD5E1"/>
+              <TextBlock Text="✅ Sem falcatrua" Foreground="#CBD5E1"/>
             </StackPanel>
           </Border>
 
@@ -130,6 +184,144 @@
                        TextWrapping="Wrap"/>
           </StackPanel>
         </Border>
+
+        <Grid ColumnDefinitions="390,*" ColumnSpacing="18">
+
+          <Border Background="#111827" CornerRadius="18" Padding="20">
+            <StackPanel Spacing="16">
+              <TextBlock Text="Qualidade da rede"
+                         Foreground="#F9FAFB"
+                         FontSize="20"
+                         FontWeight="Bold"/>
+
+              <Border Background="#0B1220" CornerRadius="18" Padding="22">
+                <StackPanel Spacing="12">
+                  <TextBlock x:Name="GaugePingText"
+                             Text="-- ms"
+                             Foreground="#F9FAFB"
+                             FontSize="46"
+                             FontWeight="Bold"
+                             HorizontalAlignment="Center"/>
+
+                  <TextBlock x:Name="GaugeStatusText"
+                             Text="Aguardando exame"
+                             Foreground="#CBD5E1"
+                             FontSize="18"
+                             FontWeight="Bold"
+                             HorizontalAlignment="Center"
+                             TextWrapping="Wrap"/>
+
+                  <ProgressBar x:Name="GaugeQualityBar"
+                               Minimum="0"
+                               Maximum="100"
+                               Value="0"
+                               Height="28"
+                               Foreground="#64748B"/>
+
+                  <TextBlock x:Name="GaugeHintText"
+                             Text="A barra mostra a qualidade aproximada do ping atual."
+                             Foreground="#94A3B8"
+                             FontSize="12"
+                             TextWrapping="Wrap"
+                             TextAlignment="Center"/>
+                </StackPanel>
+              </Border>
+
+              <Grid ColumnDefinitions="*,*,*" ColumnSpacing="8">
+                <Border Background="#16351F" CornerRadius="10" Padding="8">
+                  <TextBlock Text="0–70 ms&#10;Bom"
+                             Foreground="#BBF7D0"
+                             TextAlignment="Center"
+                             FontSize="12"/>
+                </Border>
+
+                <Border Grid.Column="1" Background="#3A300D" CornerRadius="10" Padding="8">
+                  <TextBlock Text="70–120 ms&#10;Atenção"
+                             Foreground="#FEF08A"
+                             TextAlignment="Center"
+                             FontSize="12"/>
+                </Border>
+
+                <Border Grid.Column="2" Background="#3B1111" CornerRadius="10" Padding="8">
+                  <TextBlock Text="120+ ms&#10;Ruim"
+                             Foreground="#FECACA"
+                             TextAlignment="Center"
+                             FontSize="12"/>
+                </Border>
+              </Grid>
+
+            </StackPanel>
+          </Border>
+
+          <Border Grid.Column="1" Background="#111827" CornerRadius="18" Padding="20">
+            <StackPanel Spacing="12">
+              <TextBlock Text="Painel ao vivo do teste"
+                         Foreground="#F9FAFB"
+                         FontSize="20"
+                         FontWeight="Bold"/>
+
+              <Grid ColumnDefinitions="*,*,*,*" ColumnSpacing="12">
+                <Border Background="#0B1220" CornerRadius="14" Padding="14">
+                  <StackPanel Spacing="4">
+                    <TextBlock Text="Alvo atual" Foreground="#94A3B8" FontSize="12"/>
+                    <TextBlock x:Name="AlvoAtualText"
+                               Text="Aguardando"
+                               Foreground="#E5E7EB"
+                               FontSize="15"
+                               FontWeight="Bold"
+                               TextWrapping="Wrap"/>
+                  </StackPanel>
+                </Border>
+
+                <Border Grid.Column="1" Background="#0B1220" CornerRadius="14" Padding="14">
+                  <StackPanel Spacing="4">
+                    <TextBlock Text="Pacote" Foreground="#94A3B8" FontSize="12"/>
+                    <TextBlock x:Name="PacoteAtualText"
+                               Text="0/0"
+                               Foreground="#E5E7EB"
+                               FontSize="20"
+                               FontWeight="Bold"/>
+                  </StackPanel>
+                </Border>
+
+                <Border Grid.Column="2" Background="#0B1220" CornerRadius="14" Padding="14">
+                  <StackPanel Spacing="4">
+                    <TextBlock Text="Ping atual" Foreground="#94A3B8" FontSize="12"/>
+                    <TextBlock x:Name="PingAtualText"
+                               Text="-- ms"
+                               Foreground="#E5E7EB"
+                               FontSize="22"
+                               FontWeight="Bold"/>
+                  </StackPanel>
+                </Border>
+
+                <Border Grid.Column="3" Background="#0B1220" CornerRadius="14" Padding="14">
+                  <StackPanel Spacing="4">
+                    <TextBlock Text="Estado" Foreground="#94A3B8" FontSize="12"/>
+                    <TextBlock x:Name="EstadoAtualText"
+                               Text="Parado"
+                               Foreground="#E5E7EB"
+                               FontSize="15"
+                               FontWeight="Bold"
+                               TextWrapping="Wrap"/>
+                  </StackPanel>
+                </Border>
+              </Grid>
+
+              <ProgressBar x:Name="ProgressoBar"
+                           Minimum="0"
+                           Maximum="100"
+                           Value="0"
+                           Height="18"/>
+
+              <TextBlock x:Name="ResumoAoVivoText"
+                         Text="Nenhum exame em execução."
+                         Foreground="#CBD5E1"
+                         TextWrapping="Wrap"/>
+            </StackPanel>
+          </Border>
+
+        </Grid>
 
         <Grid ColumnDefinitions="*,*" ColumnSpacing="18">
           <Border Background="#111827" CornerRadius="18" Padding="20">
@@ -178,12 +370,28 @@
 
         <Border Background="#111827" CornerRadius="18" Padding="20">
           <StackPanel Spacing="10">
+                        <Border Background="#0B1220" CornerRadius="14" Padding="12" Margin="0,0,0,12">
+              <StackPanel Spacing="8">
+                <TextBlock Text="Apps seguros encontrados"
+                           Foreground="#F9FAFB"
+                           FontWeight="Bold"/>
+
+                <TextBlock x:Name="AppsSelecionaveisAvisoText"
+                           Text="Clique em Listar Apps Seguros para carregar os candidatos."
+                           Foreground="#94A3B8"
+                           TextWrapping="Wrap"
+                           FontSize="12"/>
+
+                <StackPanel x:Name="AppsSelecionaveisPanel"
+                            Spacing="6"/>
+              </StackPanel>
+            </Border>
             <TextBlock Text="Relatório para Discord"
                        Foreground="#F9FAFB"
                        FontSize="18"
                        FontWeight="Bold"/>
             <TextBox x:Name="RelatorioBox"
-                     Text="Exillados WarPrep v0.2 pronto. Nenhum diagnóstico executado ainda."
+                     Text="Exillados WarPrep v0.4.1 pronto. Nenhum diagnóstico executado ainda."
                      AcceptsReturn="True"
                      IsReadOnly="True"
                      TextWrapping="Wrap"
@@ -198,3 +406,32 @@
 
   </Grid>
 </Window>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
